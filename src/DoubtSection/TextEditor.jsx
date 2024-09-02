@@ -170,7 +170,7 @@ const TextEditor = ({titleSlug}) => {
     setIsLoading(true);
     try {
       const cleanedText = cleanContent(text);
-      const response = await apiClient.post('http://localhost:5000/ai-completion', {
+      const response = await apiClient.post('https://takeuforward-plus-clone.onrender.com/ai-completion', {
         content: cleanedText
       });
 

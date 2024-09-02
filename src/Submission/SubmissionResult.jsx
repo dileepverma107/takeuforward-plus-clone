@@ -114,7 +114,7 @@ const SubmissionResult = ({ result, titleSlug, isSubmitting }) => {
 Your response should contain only the original code provided by me  followed by the numbered list of relevant improvement suggestions for competitive programming scenarios. Do not include any other text or explanations even dont include like this is original code this is..`;
       }
       const cleanedText = prompt +'\n'+cleanContent(code);
-      const response = await apiClient.post('http://localhost:5000/ai-completion', { content: cleanedText });
+      const response = await apiClient.post('https://takeuforward-plus-clone.onrender.com/ai-completion', { content: cleanedText });
       setAnalysisResult(response.data);
     } catch (error) {
       console.error('Error analyzing code:', error);
