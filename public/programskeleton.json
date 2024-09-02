@@ -1,0 +1,802 @@
+[
+        {
+            "slugName": "two-sum",
+            "testCases": [
+                {
+                    "name": "Testcase 1",
+                    "input": "nums = [2, 7, 11, 15], target = 9",
+                    "expectedOutput": "[0, 1]",
+                    "isPermanent": true,
+                    "status": null,
+                    "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {2,7,11,15};\n        int target = 9;\n        int[] result = solution.twoSum(nums, target);\n        System.out.println(java.util.Arrays.toString(result));\n    }\n}",
+                    "javascriptProgram": "var nums = [2, 7, 11, 15];\nvar target = 9;\nvar result = twoSum(nums, target);\nconsole.log(`[${result.join(', ')}]`);",
+                    "pythonProgram": "nums = [2, 7, 11, 15]\ntarget = 9\nsolution = Solution()\nresult = solution.twoSum(nums, target)\nprint(result)",
+                    "cProgram": "#include <stdio.h>\n#include <stdlib.h>\n  int* twoSum(int* nums, int numsSize, int target, int* returnSize); \nint main() {\n    int nums[] = {2, 7, 11, 15};\n    int numsSize = 4;\n    int target = 9;\n    int returnSize;\n    int* result = twoSum(nums, numsSize, target, &returnSize);\n\n    printf(\"[%d, %d]\\n\", result[0], result[1]);\n    free(result);\n\n    return 0;\n}",                   
+                    "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n cppCode \n// Helper function to print vector\nvoid printVector(const vector<int>& vec) {\n    cout << \"[\";\n    for (size_t i = 0; i < vec.size(); ++i) {\n        cout << vec[i];\n        if (i != vec.size() - 1) {\n            cout << \", \";\n        }\n    }\n    cout << \"]\" << endl;\n}\n\n// Main function \nint main() {\n    vector<int> nums = {3, 3};\n    int target = 6;\n\n    // Create Solution object\n    Solution solution;\n\n    // Call the twoSum method\n    vector<int> result = solution.twoSum(nums, target);\n\n    // Print the result using the custom function\n    printVector(result);\n\n    return 0;\n}"                        
+                },
+                {
+                    "name": "Testcase 2",
+                    "input": "nums = [3, 2, 4], target = 6",
+                    "expectedOutput": "[1, 2]",
+                    "isPermanent": true,
+                    "status": null,
+                    "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {3,2,4};\n        int target = 6;\n        int[] result = solution.twoSum(nums, target);\n        System.out.println(java.util.Arrays.toString(result));\n    }\n}",
+                    "javascriptProgram": "var nums = [3, 2, 4];\nvar target = 6;\nvar result = twoSum(nums, target);\nconsole.log(`[${result.join(', ')}]`);",
+                    "pythonProgram": "nums = [3, 2, 4]\ntarget = 6\nsolution = Solution()\nresult = solution.twoSum(nums, target)\nprint(result)",
+                    "cProgram": "#include <stdio.h>\n#include <stdlib.h>\n  int* twoSum(int* nums, int numsSize, int target, int* returnSize); \nint main() {\n    int nums[] = {3, 2, 4};\n    int numsSize = 3;\n    int target = 6;\n    int returnSize;\n    int* result = twoSum(nums, numsSize, target, &returnSize);\n\n    printf(\"[%d, %d]\\n\", result[0], result[1]);\n    free(result);\n\n    return 0;\n}",  
+                    "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n cppCode \n// Helper function to print vector\nvoid printVector(const vector<int>& vec) {\n    cout << \"[\";\n    for (size_t i = 0; i < vec.size(); ++i) {\n        cout << vec[i];\n        if (i != vec.size() - 1) {\n            cout << \", \";\n        }\n    }\n    cout << \"]\" << endl;\n}\n\n// Main function \nint main() {\n    vector<int> nums = {3, 2, 4};\n    int target = 6;\n\n    // Create Solution object\n    Solution solution;\n\n    // Call the twoSum method\n    vector<int> result = solution.twoSum(nums, target);\n\n    // Print the result using the custom function\n    printVector(result);\n\n    return 0;\n}" 
+                },
+                {
+                    "name": "Testcase 3",
+                    "input": "nums = [3, 3], target = 6",
+                    "expectedOutput": "[0, 1]",
+                    "isPermanent": true,
+                    "status": null,
+                    "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {3,3};\n        int target = 6;\n        int[] result = solution.twoSum(nums, target);\n        System.out.println(java.util.Arrays.toString(result));\n    }\n}",
+                    "javascriptProgram": "var nums = [3, 3];\nvar target = 6;\nvar result = twoSum(nums, target);\nconsole.log(`[${result.join(', ')}]`);",
+                    "pythonProgram": "nums = [3, 3]\ntarget = 6\nsolution = Solution()\nresult = solution.twoSum(nums, target)\nprint(result)",
+                    "cProgram": "#include <stdio.h>\n#include <stdlib.h>\n  int* twoSum(int* nums, int numsSize, int target, int* returnSize); \nint main() {\n    int nums[] = {3, 3};\n    int numsSize = 2;\n    int target = 6;\n    int returnSize;\n    int* result = twoSum(nums, numsSize, target, &returnSize);\n\n    printf(\"[%d, %d]\\n\", result[0], result[1]);\n    free(result);\n\n    return 0;\n}",
+                   "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n cppCode \n// Helper function to print vector\nvoid printVector(const vector<int>& vec) {\n    cout << \"[\";\n    for (size_t i = 0; i < vec.size(); ++i) {\n        cout << vec[i];\n        if (i != vec.size() - 1) {\n            cout << \", \";\n        }\n    }\n    cout << \"]\" << endl;\n}\n\n// Main function \nint main() {\n    vector<int> nums = {3, 3};\n    int target = 6;\n\n    // Create Solution object\n    Solution solution;\n\n    // Call the twoSum method\n    vector<int> result = solution.twoSum(nums, target);\n\n    // Print the result using the custom function\n    printVector(result);\n\n    return 0;\n}" 
+                }
+            ]
+        },
+        {
+            "slugName": "check-if-array-is-sorted-and-rotated",
+            "testCases": [
+                {
+                    "name": "Testcase 1",
+                    "input": "nums = [3, 4, 5, 1, 2]",
+                    "expectedOutput": "true",
+                    "isPermanent": true,
+                    "status": null,
+                    "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {3,4,5,1,2};\n        boolean result = solution.check(nums);\n        System.out.println(result);\n    }\n}",
+                    "javascriptProgram": "var nums = [3, 4, 5, 1, 2];\nvar result = check(nums);\nconsole.log(result);",
+                    "pythonProgram": "nums = [3, 4, 5, 1, 2]\nsolution = Solution()\nresult = solution.check(nums)\nprint(str(result).lower())",
+                    "cProgram": "#include <stdio.h>\n#include <stdbool.h>\nbool check(int* nums, int numsSize);\nint main() {\n    int nums[] = {3, 4, 5, 1, 2};\n    int numsSize = 5;\n    bool result = check(nums, numsSize);\n    printf(\"%s\\n\", result ? \"true\" : \"false\");\n    return 0;\n}",
+                    "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n    vector<int> nums = {3, 4, 5, 1, 2};\n   Solution solution;bool result = solution.check(nums);\n    cout << (result ? \"true\" : \"false\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "name": "Testcase 2",
+                    "input": "nums = [2, 1, 3, 4]",
+                    "expectedOutput": "false",
+                    "isPermanent": true,
+                    "status": null,
+                    "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {2,1,3,4};\n        boolean result = solution.check(nums);\n        System.out.println(result);\n    }\n}",
+                    "javascriptProgram": "var nums = [2, 1, 3, 4];\nvar result = check(nums);\nconsole.log(result);",
+                    "pythonProgram": "nums = [2, 1, 3, 4]\nsolution = Solution()\nresult = solution.check(nums)\nprint(str(result).lower())",
+                    "cProgram": "#include <stdio.h>\n#include <stdbool.h>\nbool check(int* nums, int numsSize);\nint main() {\n    int nums[] = {2, 1, 3, 4};\n    int numsSize = 4;\n    bool result = check(nums, numsSize);\n    printf(\"%s\\n\", result ? \"true\" : \"false\");\n    return 0;\n}",
+                    "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n    vector<int> nums = {2, 1, 3, 4};\n   Solution solution;bool result = solution.check(nums);\n    cout << (result ? \"true\" : \"false\") << endl;\n    return 0;\n}"
+                },
+                {
+                    "name": "Testcase 3",
+                    "input": "nums = [1, 2, 3]",
+                    "expectedOutput": "true",
+                    "isPermanent": true,
+                    "status": null,
+                    "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {1,2,3};\n        boolean result = solution.check(nums);\n        System.out.println(result);\n    }\n}",
+                    "javascriptProgram": "var nums = [1, 2, 3];\nvar result = check(nums);\nconsole.log(result);",
+                    "pythonProgram": "nums = [1, 2, 3]\nsolution = Solution()\nresult = solution.check(nums)\nprint(str(result).lower())",
+                    "cProgram": "#include <stdio.h>\n#include <stdbool.h>\nbool check(int* nums, int numsSize);\nint main() {\n    int nums[] = {1, 2, 3};\n    int numsSize = 3;\n    bool result = check(nums, numsSize);\n    printf(\"%s\\n\", result ? \"true\" : \"false\");\n    return 0;\n}",
+                    "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n    vector<int> nums = {1, 2, 3};\n   Solution solution;bool result = solution.check(nums);\n    cout << (result ? \"true\" : \"false\") << endl;\n    return 0;\n}"
+                }
+            ]
+        },
+    {
+        "slugName": "remove-duplicates-from-sorted-array",
+        "testCases": [
+            {
+                "name": "Testcase 1",
+                "input": "nums = [1, 1, 2]",
+                "expectedOutput": "2",
+                "isPermanent": true,
+                "status": null,
+                "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {1,1,2};\n     int result = solution.removeDuplicates(nums);\n        System.out.println(result);\n    }\n}",
+                "javascriptProgram": "var nums = [1, 1, 2];\nvar result = removeDuplicates(nums);\nconsole.log(result);",
+                "pythonProgram": "nums = [1, 1, 2]\nsolution = Solution()\nresult = solution.removeDuplicates(nums)\nprint(result)",
+                "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int removeDuplicates(int* nums, int numsSize); \n int main() { \n int nums[] = {1, 1, 2};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = removeDuplicates(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+                "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {1, 1, 2};\nSolution solution;\nint result = solution.removeDuplicates(nums);\ncout << result;}"
+            },
+            {
+                "name": "Testcase 2",
+                "input": "nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]",
+                "expectedOutput": "5",
+                "isPermanent": true,
+                "status": null,
+                "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {0,0,1,1,1,2,2,3,3,4};\n         int result = solution.removeDuplicates(nums);\n        System.out.println(result);\n    }\n}",
+                "javascriptProgram": "var nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];\nvar result = removeDuplicates(nums);\nconsole.log(result);",
+                "pythonProgram": "nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]\nsolution = Solution()\nresult = solution.removeDuplicates(nums)\nprint(result)",
+                "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int removeDuplicates(int* nums, int numsSize); \n int main() { \n int nums[] = {0,0,1,1,1,2,2,3,3,4};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = removeDuplicates(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+                "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};\nSolution solution;\nint result = solution.removeDuplicates(nums);\ncout << result;}"
+            }
+        ]
+    },
+    {
+        "slugName": "move-zeroes",
+        "testCases": [
+            {
+                "name": "Testcase 1",
+                "input": "nums = [0, 1, 0, 3, 12]",
+                "expectedOutput": "[1, 3, 12, 0, 0]",
+                "isPermanent": true,
+                "status": null,
+                "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {0, 1, 0, 3, 12};\n     solution.moveZeroes(nums);\n        System.out.println(java.util.Arrays.toString(nums));\n    }\n}",
+                "javascriptProgram": "var nums = [0, 1, 0, 3, 12];\nmoveZeroes(nums);\nconsole.log(`[${nums.join(', ')}]`);",
+                "pythonProgram": "nums = [0, 1, 0, 3, 12]\nsolution = Solution()\nsolution.moveZeroes(nums)\nprint(nums)",
+                "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n void moveZeroes(int* nums, int numsSize); \n int main() { \n int nums[] = {0, 1, 0, 3, 12};\nint numsSize = 5;\nmoveZeroes(nums, numsSize);\nprintf(\"[%d, %d, %d, %d, %d]\", nums[0], nums[1], nums[2], nums[3], nums[4]);}",
+                "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {0, 1, 0, 3, 12};\nSolution solution;\nsolution.moveZeroes(nums);\ncout << \"[\" << nums[0] << \", \" << nums[1] << \", \" << nums[2] << \", \" << nums[3] << \", \" << nums[4] << \"]\";}"
+            },
+            {
+                "name": "Testcase 2",
+                "input": "nums = [0]",
+                "expectedOutput": "[0]",
+                "isPermanent": true,
+                "status": null,
+                "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {0};\n         solution.moveZeroes(nums);\n        System.out.println(java.util.Arrays.toString(nums));\n    }\n}",
+                "javascriptProgram": "var nums = [0];\nmoveZeroes(nums);\nconsole.log(`[${nums.join(', ')}]`);",
+                "pythonProgram": "nums = [0]\nsolution = Solution()\nsolution.moveZeroes(nums)\nprint(nums)",
+                "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n void moveZeroes(int* nums, int numsSize); \n int main() { \n int nums[] = {0};\nint numsSize = 1;\nmoveZeroes(nums, numsSize);\nprintf(\"[%d]\", nums[0]);}",
+                "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {0};\nSolution solution;\nsolution.moveZeroes(nums);\ncout << \"[\" << nums[0] << \"]\";}"
+            }
+        ]
+    },
+    {
+        "slugName": "rotate-array",
+        "testCases": [
+            {
+                "name": "Testcase 1",
+                "input": "nums = [1, 2, 3, 4, 5, 6, 7], k = 3",
+                "expectedOutput": "[5, 6, 7, 1, 2, 3, 4]",
+                "isPermanent": true,
+                "status": null,
+                "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {1, 2, 3, 4, 5, 6, 7}; int k = 3;\n     solution.rotate(nums, k);\n        System.out.println(java.util.Arrays.toString(nums));\n    }\n}",
+                "javascriptProgram": "var nums = [1, 2, 3, 4, 5, 6, 7]; var k = 3;\nrotate(nums, k);\nconsole.log(`[${nums.join(', ')}]`);",
+                "pythonProgram": "nums = [1, 2, 3, 4, 5, 6, 7];  k = 3;\nsolution = Solution()\nsolution.rotate(nums, k)\nprint(nums)",
+                "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n void rotate(int* nums, int numsSize, int k); \n int main() { \n int nums[] = {1, 2, 3, 4, 5, 6, 7}; int k = 3;\nint numsSize = 7;\nrotate(nums, numsSize, k);\nprintf(\"[%d, %d, %d, %d, %d, %d, %d]\", nums[0], nums[1], nums[2], nums[3], nums[4], nums[5], nums[6]);}",
+                "cppProgram": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {1, 2, 3, 4, 5, 6, 7}; int k = 3;\nSolution solution;\nsolution.rotate(nums, k);\ncout << \"[\" << nums[0] << \", \" << nums[1] << \", \" << nums[2] << \", \" << nums[3] << \", \" << nums[4] << \", \" << nums[5] << \", \" << nums[6] << \"]\";}"
+            },
+            {
+                "name": "Testcase 2",
+                "input": "nums = [-1, -100, 3, 99], k = 2",
+                "expectedOutput": "[3, 99, -1, -100]",
+                "isPermanent": true,
+                "status": null,
+                "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {-1, -100, 3, 99}; int k = 2;\n         solution.rotate(nums, k);\n        System.out.println(java.util.Arrays.toString(nums));\n    }\n}",
+                "javascriptProgram": "var nums = [-1, -100, 3, 99]; var k = 2;\nrotate(nums, k);\nconsole.log(`[${nums.join(', ')}]`);",
+                "pythonProgram": "nums = [-1, -100, 3, 99]; k = 2;\nsolution = Solution()\nsolution.rotate(nums, k)\nprint(nums)",
+                "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n void rotate(int* nums, int numsSize, int k); \n int main() { \n int nums[] = {-1, -100, 3, 99}; int k = 2;\n int numsSize = 4;\nrotate(nums, numsSize,k);\nprintf(\"[%d, %d, %d, %d]\", nums[0],nums[1], nums[2], nums[3]);}",
+                "cppProgram": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {-1, -100, 3, 99}; int k = 2;\nSolution solution;\nsolution.rotate(nums, k);\ncout << \"[\" << nums[0] << \", \" << nums[1] << \", \" << nums[2] << \", \" << nums[3] << \"]\";}"
+            }
+	]
+},
+{
+    "slugName": "missing-number",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "nums = [3, 0, 1]",
+            "expectedOutput": "2",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {3, 0, 1};\n     int result = solution.missingNumber(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [3, 0, 1];\nvar result = missingNumber(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [3, 0, 1]\nsolution = Solution()\nresult = solution.missingNumber(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int missingNumber(int* nums, int numsSize); \n int main() { \n int nums[] = {3, 0, 1};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = missingNumber(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {3, 0, 1};\nSolution solution;\nint result = solution.missingNumber(nums);\ncout << result;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "nums = [0, 1]",
+            "expectedOutput": "2",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {0, 1};\n         int result = solution.missingNumber(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [0, 1];\nvar result = missingNumber(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [0, 1]\nsolution = Solution()\nresult = solution.missingNumber(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int missingNumber(int* nums, int numsSize); \n int main() { \n int nums[] = {0, 1};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = missingNumber(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {0, 1};\nSolution solution;\nint result = solution.missingNumber(nums);\ncout << result;}"
+        },
+        {
+            "name": "Testcase 3",
+            "input": "nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]",
+            "expectedOutput": "8",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {9, 6, 4, 2, 3, 5, 7, 0, 1};\n         int result = solution.missingNumber(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [9, 6, 4, 2, 3, 5, 7, 0, 1];\nvar result = missingNumber(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [9, 6, 4, 2, 3, 5, 7, 0, 1]\nsolution = Solution()\nresult = solution.missingNumber(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int missingNumber(int* nums, int numsSize); \n int main() { \n int nums[] = {9, 6, 4, 2, 3, 5, 7, 0, 1};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = missingNumber(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {9, 6, 4, 2, 3, 5, 7, 0, 1};\nSolution solution;\nint result = solution.missingNumber(nums);\ncout << result;}"
+        }
+    ]
+},
+{
+    "slugName": "max-consecutive-ones",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "nums = [1, 1, 0, 1, 1, 1]",
+            "expectedOutput": "3",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {1, 1, 0, 1, 1, 1};\n     int result = solution.findMaxConsecutiveOnes(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [1, 1, 0, 1, 1, 1];\nvar result = findMaxConsecutiveOnes(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [1, 1, 0, 1, 1, 1]\nsolution = Solution()\nresult = solution.findMaxConsecutiveOnes(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int findMaxConsecutiveOnes(int* nums, int numsSize); \n int main() { \n int nums[] = {1, 1, 0, 1, 1, 1};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = findMaxConsecutiveOnes(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {1, 1, 0, 1, 1, 1};\nSolution solution;\nint result = solution.findMaxConsecutiveOnes(nums);\ncout << result;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "nums = [1, 0, 1, 1, 0, 1]",
+            "expectedOutput": "2",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {1, 0, 1, 1, 0, 1};\n         int result = solution.findMaxConsecutiveOnes(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [1, 0, 1, 1, 0, 1];\nvar result = findMaxConsecutiveOnes(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [1, 0, 1, 1, 0, 1]\nsolution = Solution()\nresult = solution.findMaxConsecutiveOnes(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int findMaxConsecutiveOnes(int* nums, int numsSize); \n int main() { \n int nums[] = {1, 0, 1, 1, 0, 1};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = findMaxConsecutiveOnes(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {1, 0, 1, 1, 0, 1};\nSolution solution;\nint result = solution.findMaxConsecutiveOnes(nums);\ncout << result;}"
+        }
+    ]
+}, 
+{
+    "slugName": "binary-search",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "nums = [-1, 0, 3, 5, 9, 12], target = 9",
+            "expectedOutput": "4",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {-1, 0, 3, 5, 9, 12}; \n int target =9;\n     int result = solution.search(nums, target);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [-1, 0, 3, 5, 9, 12]; \n var target =9;\nvar result = search(nums, target);\nconsole.log(result);",
+            "pythonProgram": "nums = [-1, 0, 3, 5, 9, 12]\n\ntarget = 9\nsolution = Solution()\nresult = solution.search(nums, target)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int search(int* nums, int numsSize, int target); \n int main() { \n int nums[] = {-1, 0, 3, 5, 9, 12}; \n int target =9;\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = search(nums, numsSize, target);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {-1, 0, 3, 5, 9, 12};\n int target =9;\nSolution solution;\nint result = solution.search(nums, target);\ncout << result;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "nums = [-1, 0, 3, 5, 9, 12], target = 2",
+            "expectedOutput": "-1",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {-1, 0, 3, 5, 9, 12}; \n int target =2;\n     int result = solution.search(nums, target);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [-1, 0, 3, 5, 9, 12]; \n var target =2;\nvar result = search(nums, target);\nconsole.log(result);",
+            "pythonProgram": "nums = [-1, 0, 3, 5, 9, 12]\n\ntarget = 2\nsolution = Solution()\nresult = solution.search(nums, target)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int search(int* nums, int numsSize, int target); \n int main() { \n int nums[] = {-1, 0, 3, 5, 9, 12}; \n int target =2;\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = search(nums, numsSize, target);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {-1, 0, 3, 5, 9, 12};\n int target =2;\nSolution solution;\nint result = solution.search(nums, target);\ncout << result;}"
+        }
+    ]
+},
+{
+    "slugName": "search-in-rotated-sorted-array",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "nums = [4, 5, 6, 7, 0, 1, 2], target = 0",
+            "expectedOutput": "4",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {4, 5, 6, 7, 0, 1, 2}; \n int target =0;\n     int result = solution.search(nums, target);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [4, 5, 6, 7, 0, 1, 2]; \n var target =0;\nvar result = search(nums, target);\nconsole.log(result);",
+            "pythonProgram": "nums = [4, 5, 6, 7, 0, 1, 2]\n\ntarget = 0\nsolution = Solution()\nresult = solution.search(nums, target)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int search(int* nums, int numsSize, int target); \n int main() { \n int nums[] = {4, 5, 6, 7, 0, 1, 2}; \n int target =0;\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = search(nums, numsSize, target);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {4, 5, 6, 7, 0, 1, 2};\n int target =0;\nSolution solution;\nint result = solution.search(nums, target);\ncout << result;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "nums = [4, 5, 6, 7, 0, 1, 2], target = 3",
+            "expectedOutput": "-1",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {4, 5, 6, 7, 0, 1, 2}; \n int target =3;\n     int result = solution.search(nums, target);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [4, 5, 6, 7, 0, 1, 2]; \n var target =3;\nvar result = search(nums, target);\nconsole.log(result);",
+            "pythonProgram": "nums = [4, 5, 6, 7, 0, 1, 2]\n\ntarget = 3\nsolution = Solution()\nresult = solution.search(nums, target)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int search(int* nums, int numsSize, int target); \n int main() { \n int nums[] = {4, 5, 6, 7, 0, 1, 2}; \n int target =3;\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = search(nums, numsSize, target);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {4, 5, 6, 7, 0, 1, 2};\n int target =3;\nSolution solution;\nint result = solution.search(nums, target);\ncout << result;}"
+        },
+		{
+            "name": "Testcase 3",
+            "input": "nums = [1], target = 0",
+            "expectedOutput": "-1",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {1}; \n int target =0;\n     int result = solution.search(nums, target);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [1]; \n var target =0;\nvar result = search(nums, target);\nconsole.log(result);",
+            "pythonProgram": "nums = [1]\n\ntarget = 0\nsolution = Solution()\nresult = solution.search(nums, target)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int search(int* nums, int numsSize, int target); \n int main() { \n int nums[] = {1}; \n int target =0;\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = search(nums, numsSize, target);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {1};\n int target =0;\nSolution solution;\nint result = solution.search(nums, target);\ncout << result;}"
+        }
+    ]
+},
+{
+    "slugName": "koko-eating-bananas",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "nums = [3, 6, 7, 11], h = 8",
+            "expectedOutput": "4",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {3, 6, 7, 11}; \n int h =8;\n     int result = solution.minEatingSpeed(nums, h);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [3, 6, 7, 11]; \n var h =8;\nvar result = minEatingSpeed(nums, h);\nconsole.log(result);",
+            "pythonProgram": "nums = [3, 6, 7, 11]\n\nh = 8\nsolution = Solution()\nresult = solution.minEatingSpeed(nums, h)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int minEatingSpeed(int* nums, int numsSize, int h); \n int main() { \n int nums[] = {3, 6, 7, 11}; \n int h =8;\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = minEatingSpeed(nums, numsSize, h);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {3, 6, 7, 11};\n int h =8;\nSolution solution;\nint result = solution.minEatingSpeed(nums, h);\ncout << result;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "nums = [30, 11, 23, 4, 20], h = 5",
+            "expectedOutput": "30",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {30, 11, 23, 4, 20}; \n int h =5;\n     int result = solution.minEatingSpeed(nums, h);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [30, 11, 23, 4, 20]; \n var h =5;\nvar result = minEatingSpeed(nums, h);\nconsole.log(result);",
+            "pythonProgram": "nums = [30, 11, 23, 4, 20]\n\nh = 5\nsolution = Solution()\nresult = solution.minEatingSpeed(nums, h)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int minEatingSpeed(int* nums, int numsSize, int h); \n int main() { \n int nums[] = {30, 11, 23, 4, 20}; \n int h =5;\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = minEatingSpeed(nums, numsSize, h);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {30, 11, 23, 4, 20};\n int h =5;\nSolution solution;\nint result = solution.minEatingSpeed(nums, h);\ncout << result;}"
+        },
+		{
+            "name": "Testcase 3",
+            "input": "nums = [30, 11, 23, 4, 20], h = 6",
+            "expectedOutput": "23",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {30, 11, 23, 4, 20}; \n int h =6;\n     int result = solution.minEatingSpeed(nums, h);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [30, 11, 23, 4, 20]; \n var h =6;\nvar result = minEatingSpeed(nums, h);\nconsole.log(result);",
+            "pythonProgram": "nums = [30, 11, 23, 4, 20]\n\nh = 6\nsolution = Solution()\nresult = solution.minEatingSpeed(nums, h)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int minEatingSpeed(int* nums, int numsSize, int h); \n int main() { \n int nums[] = {30, 11, 23, 4, 20}; \n int h =6;\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = minEatingSpeed(nums, numsSize, h);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {30, 11, 23, 4, 20};\n int h =6;\nSolution solution;\nint result = solution.minEatingSpeed(nums, h);\ncout << result;}"
+        }
+    ]
+},
+{
+    "slugName": "remove-outermost-parentheses",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "s = \"(()())(())\"",
+            "expectedOutput": "()()()",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        String s = \"(()())(())\"; \n \n     String result = solution.removeOuterParentheses(s);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var s = '(()())(())'; \n\nvar result = removeOuterParentheses(s);\nconsole.log(result);",
+            "pythonProgram": "s = \"(()())(())\"\n\n\nsolution = Solution()\nresult = solution.removeOuterParentheses(s)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n#include <string.h>\n#include <stdlib.h>\n  char* removeOuterParentheses(char* s); \n int main() { \n char* s = \"(()())(())\"; \n\n\n char* result = removeOuterParentheses(s);\nprintf(\"%s\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <string>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n string s = \"(()())(())\";\n\nSolution solution;\nstring result = solution.removeOuterParentheses(s);\ncout << result << endl;\nreturn 0;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "s = \"(()())(())(()(()))\"",
+            "expectedOutput": "()()()()(())",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        String s = \"(()())(())(()(()))\"; \n \n     String result = solution.removeOuterParentheses(s);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var s = '(()())(())(()(()))'; \n\nvar result = removeOuterParentheses(s);\nconsole.log(result);",
+            "pythonProgram": "s = \"(()())(())(()(()))\"\n\n\nsolution = Solution()\nresult = solution.removeOuterParentheses(s)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n#include <string.h>\n#include <stdlib.h>\n char* removeOuterParentheses(char* s); \n int main() { \n char* s = \"(()())(())(()(()))\"; \n\n\n char* result = removeOuterParentheses(s);\nprintf(\"%s\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <string>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n string s = \"(()())(())(()(()))\";\n\nSolution solution;\nstring result = solution.removeOuterParentheses(s);\ncout << result << endl;\nreturn 0;}"
+        },
+		{
+            "name": "Testcase 3",
+            "input": "s = ()()",
+            "expectedOutput": "",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        String s = \"()()\"; \n \n     String result = solution.removeOuterParentheses(s);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var s = '()()'; \n\nvar result = removeOuterParentheses(s);\nconsole.log(result);",
+            "pythonProgram": "s = \"()()\"\n\n\nsolution = Solution()\nresult = solution.removeOuterParentheses(s)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n#include <string.h>\n#include <stdlib.h>\n char* removeOuterParentheses(char* s); \n int main() { \n char* s = \"()()\"; \n\n\n char* result = removeOuterParentheses(s);\nprintf(\"%s\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <string>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n string s = \"()()\";\n\nSolution solution;\nstring result = solution.removeOuterParentheses(s);\ncout << result << endl;\nreturn 0;}"
+
+        }
+    ]
+},
+{
+    "slugName": "rotate-string",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "s = \"abcde\" goal = \"cdeab\"",
+            "expectedOutput": "true",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        String s = \"abcde\"; String goal = \"cdeab\";\n \n     boolean result = solution.rotateString(s,goal);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var s = 'abcde'; var goal='cdeab' \n\nvar result = rotateString(s,goal);\nconsole.log(result);",
+            "pythonProgram": "s = \"abcde\"\ngoal = \"cdeab\"\n\nsolution = Solution()\nresult = solution.rotateString(s,goal)\nprint(str(result).lower())",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n#include <string.h>\n#include <stdlib.h>\n  bool rotateString(char* s, char* goal); \n int main() { \n char* s = \"abcde\"; char* goal =\"cdeab\"; \n\n\n bool result = rotateString(s,goal);\nprintf(\"%s\\n\", result ? \"true\" : \"false\");\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <string>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n string s = \"abcde\"; string goal = \"cdeab\";\n\nSolution solution;\nbool result = solution.rotateString(s,goal);\ncout << (result ? \"true\" : \"false\") << endl;\nreturn 0;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "s = \"abcde\" goal = \"abced\"",
+            "expectedOutput": "false",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        String s = \"abcde\"; String goal = \"abced\";\n \n     boolean result = solution.rotateString(s,goal);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var s = 'abcde'; var goal='abced' \n\nvar result = rotateString(s,goal);\nconsole.log(result);",
+            "pythonProgram": "s = \"abcde\"\ngoal = \"abced\"\n\nsolution = Solution()\nresult = solution.rotateString(s,goal)\nprint(str(result).lower())",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n#include <string.h>\n#include <stdlib.h>\n  bool rotateString(char* s, char* goal); \n int main() { \n char* s = \"abcde\"; char* goal =\"abced\"; \n\n\n bool result = rotateString(s,goal);\nprintf(\"%s\\n\", result ? \"true\" : \"false\");\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <string>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n string s = \"abcde\"; string goal = \"abced\";\n\nSolution solution;\nbool result = solution.rotateString(s,goal);\ncout << (result ? \"true\" : \"false\") << endl;\nreturn 0;}"
+        }
+    ]
+},
+{
+    "slugName": "longest-palindromic-substring",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "s = \"babad\"",
+            "expectedOutput": "bab",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        String s = \"babad\"; \n \n     String result = solution.longestPalindrome(s);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var s = 'babad'; \n\nvar result = longestPalindrome(s);\nconsole.log(result);",
+            "pythonProgram": "s = \"babad\"\n\n\nsolution = Solution()\nresult = solution.longestPalindrome(s)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n#include <string.h>\n#include <stdlib.h>\n  char* longestPalindrome(char* s); \n int main() { \n char* s = \"babad\"; \n\n\n char* result = longestPalindrome(s);\nprintf(\"%s\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <string>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n string s = \"babad\";\n\nSolution solution;\nstring result = solution.longestPalindrome(s);\ncout << result << endl;\nreturn 0;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "s = \"cbbd\"",
+            "expectedOutput": "bb",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        String s = \"cbbd\"; \n \n     String result = solution.longestPalindrome(s);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var s = 'cbbd'; \n\nvar result = longestPalindrome(s);\nconsole.log(result);",
+            "pythonProgram": "s = \"cbbd\"\n\n\nsolution = Solution()\nresult = solution.longestPalindrome(s)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n#include <string.h>\n#include <stdlib.h>\n char* longestPalindrome(char* s); \n int main() { \n char* s = \"cbbd\"; \n\n\n char* result = longestPalindrome(s);\nprintf(\"%s\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <string>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n string s = \"cbbd\";\n\nSolution solution;\nstring result = solution.longestPalindrome(s);\ncout << result << endl;\nreturn 0;}"
+        }
+    ]
+},
+{
+    "slugName": "next-greater-element-i",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "nums1 = [4, 1, 2], nums2 = [1, 3, 4, 2]",
+            "expectedOutput": "[-1, 3, -1]",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums1 = {4, 1, 2};\n int[] nums2 = {1, 3, 4, 2};\n     int [] result = solution.nextGreaterElement(nums1, nums2);\n        System.out.println(java.util.Arrays.toString(result));\n    }\n}",
+            "javascriptProgram": "var nums1 = [4, 1, 2];\nvar nums2 = [1, 3, 4, 2];\nvar result = nextGreaterElement(nums1, nums2);\nconsole.log(`[${result.join(', ')}]`);",
+            "pythonProgram": "nums1 = [4, 1, 2]\nnums2 = [1, 3, 4, 2]\nsolution = Solution()\nresult = solution.nextGreaterElement(nums1, nums2)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n#include <stdlib.h>\n int* nextGreaterElement(int* nums1,int nums1Size, int* nums2, int nums2Size, int* resultSize ); \n int main() { \n int nums1[] = {4, 1, 2};\n int nums2[] = {1, 3, 4, 2};\nint nums1Size = 3; \n int nums2Size = 4;\n int* returnSize=(int*)malloc(3*sizeof(int));\n int* result = nextGreaterElement(nums1,nums1Size,nums2,nums2Size,returnSize);\nprintf(\"[%d, %d, %d]\", result[0], result[1], result[2]);}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums1 = {4, 1, 2};\n vector<int> nums2 = {1, 3, 4, 2};\nSolution solution;\n vector<int> result = solution.nextGreaterElement(nums1, nums2);\ncout << \"[\" << result[0] << \", \" << result[1] << \", \" << result[2] << \"]\";}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "nums1 = [2, 4], nums2 = [1, 2, 3, 4]",
+            "expectedOutput": "[3, -1]",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums1 = {2, 4};\n int[] nums2 = {1, 2, 3, 4};\n     int [] result = solution.nextGreaterElement(nums1, nums2);\n        System.out.println(java.util.Arrays.toString(result));\n    }\n}",
+            "javascriptProgram": "var nums1 = [2, 4];\nvar nums2 = [1, 2, 3, 4];\nvar result = nextGreaterElement(nums1, nums2);\nconsole.log(`[${result.join(', ')}]`);",
+            "pythonProgram": "nums1 = [2, 4]\nnums2 = [1, 2, 3, 4]\nsolution = Solution()\nresult = solution.nextGreaterElement(nums1, nums2)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n#include <stdlib.h>\n int* nextGreaterElement(int* nums1,int nums1Size, int* nums2, int nums2Size, int* resultSize ); \n int main() { \n int nums1[] = {2, 4};\n int nums2[] = {1, 2, 3, 4};\nint nums1Size = 2; \n int nums2Size = 4;\n int* returnSize=(int*)malloc(2*sizeof(int));\n int* result = nextGreaterElement(nums1,nums1Size,nums2,nums2Size,returnSize);\nprintf(\"[%d, %d]\", result[0], result[1]);}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums1 = {2, 4};\n vector<int> nums2 = {1, 2, 3, 4};\nSolution solution;\n vector<int> result = solution.nextGreaterElement(nums1, nums2);\ncout << \"[\" << result[0] << \", \" << result[1] << \"]\";}"
+        }
+    ]
+},
+{
+    "slugName": "remove-k-digits",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "num = \"1432219\", k = 3",
+            "expectedOutput": "1219",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        String num = \"1432219\";\n int k = 3;\n     String result = solution.removeKdigits(num, k);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var num = '1432219';\nvar k = 3;\nvar result = removeKdigits(num, k);\nconsole.log(result);",
+            "pythonProgram": "num = \"1432219\"\nk = 3\nsolution = Solution()\nresult = solution.removeKdigits(num, k)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n#include <string.h>\n#include <stdlib.h>\n char* removeKdigits(char* num,int k); \n int main() { \n char* num = \"1432219\";\n int k = 3;\n char* result = \nremoveKdigits(num,k);\nprintf(result);}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <list>\n#include <deque>\n#include <queue>\n#include <stack>\n#include <set>\n#include <map>\n#include <unordered_set>\n#include <unordered_map>\n#include <string>\n#include <algorithm>\n#include <functional>\n#include <iterator>\n#include <numeric>\n#include <utility>\n#include <type_traits>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n string num = \"1432219\";\n int k = 3;\nSolution solution;\n string result = solution.removeKdigits(num, k);\ncout << result;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "nums1 = \"10200\", k = 1",
+            "expectedOutput": "200",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        String num = \"10200\";\n int k =1;\n     String result = solution.removeKdigits(num, k);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var num = '10200';\nvar k = 1;\nvar result = removeKdigits(num, k);\nconsole.log(result);",
+            "pythonProgram": "num = \"10200\"\nk = 1\nsolution = Solution()\nresult = solution.removeKdigits(num, k)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n#include <string.h>\n#include <stdlib.h>\n char* removeKdigits(char* num,int k); \n int main() { \n char* num = \"10200\";\n int k = 1;\n char* result = \nremoveKdigits(num,k);\nprintf(result);}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <list>\n#include <deque>\n#include <queue>\n#include <stack>\n#include <set>\n#include <map>\n#include <unordered_set>\n#include <unordered_map>\n#include <string>\n#include <algorithm>\n#include <functional>\n#include <iterator>\n#include <numeric>\n#include <utility>\n#include <type_traits>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n string num = \"10200\";\n int k = 1;\nSolution solution;\n string result = solution.removeKdigits(num, k);\ncout << result;}"
+        },
+        {
+            "name": "Testcase 3",
+            "input": "nums1 = \"10\", k = 2",
+            "expectedOutput": "0",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        String num = \"10\";\n int k =2;\n     String result = solution.removeKdigits(num, k);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var num = '10';\nvar k = 2;\nvar result = removeKdigits(num, k);\nconsole.log(result);",
+            "pythonProgram": "num = \"10\"\nk = 2\nsolution = Solution()\nresult = solution.removeKdigits(num, k)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n#include <stdlib.h>\n#include <string.h>\n char* removeKdigits(char* num,int k); \n int main() { \n char* num = \"10\";\n int k = 2;\n char* result = \nremoveKdigits(num,k);\nprintf(result);}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <list>\n#include <deque>\n#include <queue>\n#include <stack>\n#include <set>\n#include <map>\n#include <unordered_set>\n#include <unordered_map>\n#include <string>\n#include <algorithm>\n#include <functional>\n#include <iterator>\n#include <numeric>\n#include <utility>\n#include <type_traits>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n string num = \"10\";\n int k = 2;\nSolution solution;\n string result = solution.removeKdigits(num, k);\ncout << result;}"
+        }
+    ]
+},
+{
+    "slugName": "trapping-rain-water",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]",
+            "expectedOutput": "6",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};\n     int result = solution.trap(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1];\nvar result = trap(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]\nsolution = Solution()\nresult = solution.trap(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int trap(int* nums, int numsSize); \n int main() { \n int nums[] = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = trap(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};\nSolution solution;\nint result = solution.trap(nums);\ncout << result;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "height = [4, 2, 0, 3, 2, 5]",
+            "expectedOutput": "9",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {4, 2, 0, 3, 2, 5};\n         int result = solution.trap(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [4, 2, 0, 3, 2, 5];\nvar result = trap(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [4, 2, 0, 3, 2, 5]\nsolution = Solution()\nresult = solution.trap(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int trap(int* nums, int numsSize); \n int main() { \n int nums[] = {4, 2, 0, 3, 2, 5};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = trap(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {4, 2, 0, 3, 2, 5};\nSolution solution;\nint result = solution.trap(nums);\ncout << result;}"
+        }
+    ]
+},
+{
+    "slugName": "sort-colors",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "nums = [2, 0, 2, 1, 1, 0]",
+            "expectedOutput": "[0, 0, 1, 1, 2, 2]",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {2, 0, 2, 1, 1, 0};\n     solution.sortColors(nums);\n        System.out.println(java.util.Arrays.toString(nums));\n    }\n}",
+            "javascriptProgram": "var nums = [2, 0, 2, 1, 1, 0];\nsortColors(nums);\nconsole.log(`[${nums.join(', ')}]`);",
+            "pythonProgram": "nums = [2, 0, 2, 1, 1, 0]\nsolution = Solution()\nsolution.sortColors(nums)\nprint(nums)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n void sortColors(int* nums, int numsSize); \n int main() { \n int nums[] = {2, 0, 2, 1, 1, 0};\nint numsSize = 6;\nsortColors(nums, numsSize);\nprintf(\"[%d, %d, %d, %d, %d, %d]\", nums[0], nums[1], nums[2], nums[3], nums[4], num[5]);}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {2, 0, 2, 1, 1, 0};\nSolution solution;\nsolution.sortColors(nums);\ncout << \"[\" << nums[0] << \", \" << nums[1] << \", \" << nums[2] << \", \" << nums[3] << \", \" << nums[4] << \", \" << nums[5] << \"]\";}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "nums = [2, 0, 1]",
+            "expectedOutput": "[0, 1, 2]",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {2, 0, 1};\n         solution.sortColors(nums);\n        System.out.println(java.util.Arrays.toString(nums));\n    }\n}",
+            "javascriptProgram": "var nums = [2, 0, 1];\nsortColors(nums);\nconsole.log(`[${nums.join(', ')}]`);",
+            "pythonProgram": "nums = [2, 0, 1]\nsolution = Solution()\nsolution.sortColors(nums)\nprint(nums)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n void sortColors(int* nums, int numsSize); \n int main() { \n int nums[] = {2, 0, 1};\nint numsSize = 3;\nsortColors(nums, numsSize);\nprintf(\"[%d, %d, %d]\", nums[0], num[1], num[2]);}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {2, 0, 1};\nSolution solution;\nsolution.sortColors(nums);\ncout << \"[\" << nums[0] << \", \" << nums[1] << \", \" << nums[2] << \"]\";}"
+        }
+    ]
+},
+{
+    "slugName": "majority-element",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "nums = [3, 2, 3]",
+            "expectedOutput": "3",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {3, 2, 3};\n     int result = solution.majorityElement(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [3, 2, 3];\nvar result = majorityElement(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [3, 2, 3]\nsolution = Solution()\nresult = solution.majorityElement(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int majorityElement(int* nums, int numsSize); \n int main() { \n int nums[] = {3, 2, 3};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = majorityElement(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {3, 2, 3};\nSolution solution;\nint result = solution.majorityElement(nums);\ncout << result;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "nums = [2, 2, 1, 1, 1, 2, 2]",
+            "expectedOutput": "2",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {2, 2, 1, 1, 1, 2, 2};\n         int result = solution.majorityElement(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [2, 2, 1, 1, 1, 2, 2];\nvar result = majorityElement(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [2, 2, 1, 1, 1, 2, 2]\nsolution = Solution()\nresult = solution.majorityElement(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int majorityElement(int* nums, int numsSize); \n int main() { \n int nums[] = {2, 2, 1, 1, 1, 2, 2};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = majorityElement(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {2, 2, 1, 1, 1, 2, 2};\nSolution solution;\nint result = solution.majorityElement(nums);\ncout << result;}"
+        }
+    ]
+},
+{
+    "slugName": "best-time-to-buy-and-sell-stock",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "prices = [7, 1, 5, 3, 6, 4]",
+            "expectedOutput": "5",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {7, 1, 5, 3, 6, 4};\n     int result = solution.maxProfit(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [7, 1, 5, 3, 6, 4];\nvar result = maxProfit(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [7, 1, 5, 3, 6, 4]\nsolution = Solution()\nresult = solution.maxProfit(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int maxProfit(int* nums, int numsSize); \n int main() { \n int nums[] = {7, 1, 5, 3, 6, 4};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = maxProfit(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {7, 1, 5, 3, 6, 4};\nSolution solution;\nint result = solution.maxProfit(nums);\ncout << result;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "prices = [7, 6, 4, 3, 1]",
+            "expectedOutput": "0",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {7, 6, 4, 3, 1};\n         int result = solution.maxProfit(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [7, 6, 4, 3, 1];\nvar result = maxProfit(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [7, 6, 4, 3, 1]\nsolution = Solution()\nresult = solution.maxProfit(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int maxProfit(int* nums, int numsSize); \n int main() { \n int nums[] = {7, 6, 4, 3, 1};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = maxProfit(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {7, 6, 4, 3, 1};\nSolution solution;\nint result = solution.maxProfit(nums);\ncout << result;}"
+        }
+    ]
+},
+{
+    "slugName": "maximum-subarray",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]",
+            "expectedOutput": "6",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};\n     int result = solution.maxSubArray(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];\nvar result = maxSubArray(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]\nsolution = Solution()\nresult = solution.maxSubArray(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int maxSubArray(int* nums, int numsSize); \n int main() { \n int nums[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = maxSubArray(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};\nSolution solution;\nint result = solution.maxSubArray(nums);\ncout << result;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "nums = [1]",
+            "expectedOutput": "1",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {1};\n         int result = solution.maxSubArray(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [1];\nvar result = maxSubArray(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [1]\nsolution = Solution()\nresult = solution.maxSubArray(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int maxSubArray(int* nums, int numsSize); \n int main() { \n int nums[] = {1};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = maxSubArray(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {1};\nSolution solution;\nint result = solution.maxSubArray(nums);\ncout << result;}"
+        },
+		{
+            "name": "Testcase 3",
+            "input": "nums = [5, 4, -1, 7, 8]",
+            "expectedOutput": "23",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {5, 4, -1, 7, 8};\n         int result = solution.maxSubArray(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [5, 4, -1, 7, 8];\nvar result = maxSubArray(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [5, 4, -1, 7, 8]\nsolution = Solution()\nresult = solution.maxSubArray(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int maxSubArray(int* nums, int numsSize); \n int main() { \n int nums[] = {5, 4, -1, 7, 8};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = maxSubArray(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {5, 4, -1, 7, 8};\nSolution solution;\nint result = solution.maxSubArray(nums);\ncout << result;}"
+        }
+    ]
+},
+{
+    "slugName": "single-number",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "nums = [4,1,2,1,2]",
+            "expectedOutput": "4",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {4,1,2,1,2};\n     int result = solution.singleNumber(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [4,1,2,1,2];\nvar result = singleNumber(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [4,1,2,1,2]\nsolution = Solution()\nresult = solution.singleNumber(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int singleNumber(int* nums, int numsSize); \n int main() { \n int nums[] = {4,1,2,1,2};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = singleNumber(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {4,1,2,1,2};\nSolution solution;\nint result = solution.singleNumber(nums);\ncout << result;}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "nums = [2,2,1]",
+            "expectedOutput": "1",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {2,2,1};\n         int result = solution.singleNumber(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [2,2,1];\nvar result = singleNumber(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [2,2,1]\nsolution = Solution()\nresult = solution.singleNumber(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int singleNumber(int* nums, int numsSize); \n int main() { \n int nums[] = {2,2,1};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = singleNumber(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {2,2,1};\nSolution solution;\nint result = solution.singleNumber(nums);\ncout << result;}"
+        },
+		{
+            "name": "Testcase 3",
+            "input": "nums = [1]",
+            "expectedOutput": "1",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {1};\n         int result = solution.singleNumber(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [1];\nvar result = singleNumber(nums);\nconsole.log(result);",
+            "pythonProgram": "nums = [1]\nsolution = Solution()\nresult = solution.singleNumber(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int singleNumber(int* nums, int numsSize); \n int main() { \n int nums[] = {1};\nint numsSize = sizeof(nums) / sizeof(nums[0]);\nint result = singleNumber(nums, numsSize);\nprintf(\"%d\", result);\n return 0;\n}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {1};\nSolution solution;\nint result = solution.singleNumber(nums);\ncout << result;}"
+        }
+    ]
+},
+{
+    "slugName": "majority-element-ii",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "nums = [3,2,3]",
+            "expectedOutput": "[3]",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main { \n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {3,2,3};\n     List<Integer> result = solution.majorityElement(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [3,2,3];\nvar result = majorityElement(nums);\nconsole.log(`[${result.join(', ')}]`);",
+            "pythonProgram": "nums = [3,2,3]\nsolution = Solution()\nresult = solution.majorityElement(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int* majorityElement(int* nums, int numsSize, int* resSize); \n int main() { \n int nums[] = {3,2,3};\nint numsSize = 3;\n int returnSize;\nint* result = majorityElement(nums, numsSize, &returnSize);\nprintf(\"[%d]\", result[0]);}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {3,2,3};\nSolution solution;\nvector<int> result = solution.majorityElement(nums);\ncout << \"[\" << result[0] << \"]\";}"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "nums = [1]",
+            "expectedOutput": "[1]",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {1};\n     List<Integer> result = solution.majorityElement(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [1];\n var result = majorityElement(nums);\nconsole.log(`[${result.join(', ')}]`);",
+            "pythonProgram": "nums = [1]\nsolution = Solution()\nresult = solution.majorityElement(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int* majorityElement(int* nums, int numsSize, int* resSize); \n int main() { \n int nums[] = {1};\nint numsSize = 1;\nint returnSize;\nint* result = majorityElement(nums, numsSize, &returnSize);\nprintf(\"[%d]\", result[0]);}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {1};\nSolution solution;\n vector<int> result = solution.majorityElement(nums);\ncout << \"[\" << result[0] << \"]\";}"
+        },
+		{
+            "name": "Testcase 3",
+            "input": "nums = [1, 2]",
+            "expectedOutput": "[1, 2]",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*; \n class Main {\n\n    public static void main(String[] args) {\n        Solution solution = new Solution();\n        int[] nums = {1, 2};\n        List<Integer> result= solution.majorityElement(nums);\n        System.out.println(result);\n    }\n}",
+            "javascriptProgram": "var nums = [1, 2];\nvar result = majorityElement(nums);\nconsole.log(`[${result.join(', ')}]`);",
+            "pythonProgram": "nums = [1, 2]\nsolution = Solution()\nresult = solution.majorityElement(nums)\nprint(result)",
+            "cProgram": "#include <stdio.h>\n#include <stdbool.h>\n int* majorityElement(int* nums, int numsSize, int* resSize); \n int main() { \n int nums[] = {1, 2};\nint numsSize = 2;\nint returnSize;\nint* result = majorityElement(nums, numsSize,&returnSize);\nprintf(\"[%d, %d]\", result[0], result[1]);}",
+            "cppProgram": "#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace std;\n\n cppCode \n\nint main() {\n vector<int> nums = {1, 2};\nSolution solution;\nvector<int> result = solution.majorityElement(nums);\ncout << \"[\" << result[0] << \", \" << result[1] << \"]\";}"
+        }
+    ]
+},
+{
+   "slugName": "reverse-linked-list",
+    "testCases": [
+        {
+            "name": "Testcase 1",
+            "input": "head = [1, 2, 3, 4, 5]",
+            "expectedOutput": "[5, 4, 3, 2, 1]",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*;\n\n// Definition for singly-linked list.\nclass ListNode {\n    int val;\n    ListNode next;\n    ListNode() {}\n    ListNode(int val) { this.val = val; }\n    ListNode(int val, ListNode next) { this.val = val; this.next = next; }\n\n    // Main method to run the program\n    public static void main(String[] args) {\n        // Step 1: Create a linked list with the given input\n        int[] arr = {1, 2, 3, 4, 5};\n        ListNode head = createLinkedList(arr);\n\n        // Step 2: Call the reverseList method from the Solution class\n        Solution sol = new Solution();\n        ListNode reversedHead = sol.reverseList(head);\n\n        // Step 3: Print the reversed linked list\n        printLinkedList(reversedHead);\n    }\n\n    // Method to create a linked list from an array\n    public static ListNode createLinkedList(int[] arr) {\n        if (arr.length == 0) return null;\n        ListNode head = new ListNode(arr[0]);\n        ListNode current = head;\n        for (int i = 1; i < arr.length; i++) {\n            current.next = new ListNode(arr[i]);\n            current = current.next;\n        }\n        return head;\n    }\n\n    // Method to print a linked list\n    public static void printLinkedList(ListNode head) {\n        System.out.print(\"[\");\n        ListNode current = head;\n        while (current != null) {\n            System.out.print(current.val);\n            if (current.next != null) System.out.print(\", \");\n            current = current.next;\n        }\n        System.out.println(\"]\");\n    }\n}",
+            "javascriptProgram": "class ListNode {\n    constructor(val = 0, next = null) {\n        this.val = val;\n        this.next = next;\n    }\n}\n\nclass Solution {\n    reverseList(head) {\n        let prev = null;\n        let current = head;\n        while (current !== null) {\n            let nextTemp = current.next;\n            current.next = prev;\n            prev = current;\n            current = nextTemp;\n        }\n        return prev;\n    }\n}\n\nfunction createLinkedList(arr) {\n    if (arr.length === 0) return null;\n    let head = new ListNode(arr[0]);\n    let current = head;\n    for (let i = 1; i < arr.length; i++) {\n        current.next = new ListNode(arr[i]);\n        current = current.next;\n    }\n    return head;\n}\n\nfunction printLinkedList(head) {\n    let result = '[';\n    let current = head;\n    while (current !== null) {\n        result += current.val;\n        if (current.next !== null) result += ', ';\n        current = current.next;\n    }\n    result += ']';\n    console.log(result);\n}\n\n// Main code\nconst arr = [1, 2, 3, 4, 5];\nconst head = createLinkedList(arr);\nconst sol = new Solution();\nconst reversedHead = sol.reverseList(head);\nprintLinkedList(reversedHead);\n",
+            "pythonProgram": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\nclass Solution:\n    def reverseList(self, head: ListNode) -> ListNode:\n        prev = None\n        curr = head\n        while curr:\n            next_temp = curr.next\n            curr.next = prev\n            prev = curr\n            curr = next_temp\n        return prev\n\ndef create_linked_list(arr):\n    if not arr:\n        return None\n    head = ListNode(arr[0])\n    current = head\n    for value in arr[1:]:\n        current.next = ListNode(value)\n        current = current.next\n    return head\n\ndef print_linked_list(head):\n    result = '['\n    current = head\n    while current:\n        result += str(current.val)\n        if current.next:\n            result += ', '\n        current = current.next\n    result += ']'\n    print(result)\n\n# Main code\narr = [1, 2, 3, 4, 5]\nhead = create_linked_list(arr)\nsol = Solution()\nreversed_head = sol.reverseList(head)\nprint_linked_list(reversed_head)\n",
+            "cProgram": "#include <stdio.h>\n#include <stdlib.h>\n\n// Definition for singly-linked list.\n struct ListNode* reverseList(struct ListNode* head);\nstruct ListNode {\n    int val;\n    struct ListNode *next;\n};\n\n// Function to create a linked list from an array\nstruct ListNode* createLinkedList(int* arr, int size) {\n    if (size == 0) return NULL;\n    struct ListNode* head = (struct ListNode*)malloc(sizeof(struct ListNode));\n    head->val = arr[0];\n    head->next = NULL;\n    struct ListNode* current = head;\n    for (int i = 1; i < size; i++) {\n        current->next = (struct ListNode*)malloc(sizeof(struct ListNode));\n        current = current->next;\n        current->val = arr[i];\n        current->next = NULL;\n    }\n    return head;\n}\n\n// Function to print a linked list\nvoid printLinkedList(struct ListNode* head) {\n    printf(\"[\");\n    struct ListNode* current = head;\n    while (current != NULL) {\n        printf(\"%d\", current->val);\n        if (current->next != NULL) printf(\", \");\n        current = current->next;\n    }\n    printf(\"]\\n\");\n}\n\nint main() {\n    int arr[] = {1, 2, 3, 4, 5};\n    int size = sizeof(arr) / sizeof(arr[0]);\n    struct ListNode* head = createLinkedList(arr, size);\n    struct ListNode* reversedHead = reverseList(head);\n    printLinkedList(reversedHead);\n    return 0;\n}\n",
+            "cppProgram": "#include <iostream>\n\nstruct ListNode {\n    int val;\n    ListNode *next;\n    ListNode() : val(0), next(nullptr) {}\n    ListNode(int x) : val(x), next(nullptr) {}\n    ListNode(int x, ListNode *next) : val(x), next(next) {}\n};\n\nclass Solution {\npublic:\n    ListNode* reverseList(ListNode* head) {\n        ListNode *prev = nullptr, *curr = head, *next = nullptr;\n        while (curr != nullptr) {\n            next = curr->next;\n            curr->next = prev;\n            prev = curr;\n            curr = next;\n        }\n        return prev;\n    }\n};\n\nListNode* createLinkedList(int arr[], int n) {\n    if (n == 0) return nullptr;\n    ListNode* head = new ListNode(arr[0]);\n    ListNode* current = head;\n    for (int i = 1; i < n; i++) {\n        current->next = new ListNode(arr[i]);\n        current = current->next;\n    }\n    return head;\n}\n\nvoid printLinkedList(ListNode* head) {\n    std::cout << \"[\";\n    ListNode* current = head;\n    while (current != nullptr) {\n        std::cout << current->val;\n        if (current->next != nullptr) std::cout << \", \";\n        current = current->next;\n    }\n    std::cout << \"]\" << std::endl;\n}\n\nint main() {\n    int arr[] = {1, 2, 3, 4, 5};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    ListNode* head = createLinkedList(arr, n);\n    Solution sol;\n    ListNode* reversedHead = sol.reverseList(head);\n    printLinkedList(reversedHead);\n    return 0;\n}\n"
+        },
+        {
+            "name": "Testcase 2",
+            "input": "head = [1, 2]",
+            "expectedOutput": "[2, 1]",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*;\n\n// Definition for singly-linked list.\nclass ListNode {\n    int val;\n    ListNode next;\n    ListNode() {}\n    ListNode(int val) { this.val = val; }\n    ListNode(int val, ListNode next) { this.val = val; this.next = next; }\n\n    // Main method to run the program\n    public static void main(String[] args) {\n        // Step 1: Create a linked list with the given input\n        int[] arr = {1,2};\n        ListNode head = createLinkedList(arr);\n\n        // Step 2: Call the reverseList method from the Solution class\n        Solution sol = new Solution();\n        ListNode reversedHead = sol.reverseList(head);\n\n        // Step 3: Print the reversed linked list\n        printLinkedList(reversedHead);\n    }\n\n    // Method to create a linked list from an array\n    public static ListNode createLinkedList(int[] arr) {\n        if (arr.length == 0) return null;\n        ListNode head = new ListNode(arr[0]);\n        ListNode current = head;\n        for (int i = 1; i < arr.length; i++) {\n            current.next = new ListNode(arr[i]);\n            current = current.next;\n        }\n        return head;\n    }\n\n    // Method to print a linked list\n    public static void printLinkedList(ListNode head) {\n        System.out.print(\"[\");\n        ListNode current = head;\n        while (current != null) {\n            System.out.print(current.val);\n            if (current.next != null) System.out.print(\", \");\n            current = current.next;\n        }\n        System.out.println(\"]\");\n    }\n}",
+            "javascriptProgram": "class ListNode {\n    constructor(val = 0, next = null) {\n        this.val = val;\n        this.next = next;\n    }\n}\n\nclass Solution {\n    reverseList(head) {\n        let prev = null;\n        let current = head;\n        while (current !== null) {\n            let nextTemp = current.next;\n            current.next = prev;\n            prev = current;\n            current = nextTemp;\n        }\n        return prev;\n    }\n}\n\nfunction createLinkedList(arr) {\n    if (arr.length === 0) return null;\n    let head = new ListNode(arr[0]);\n    let current = head;\n    for (let i = 1; i < arr.length; i++) {\n        current.next = new ListNode(arr[i]);\n        current = current.next;\n    }\n    return head;\n}\n\nfunction printLinkedList(head) {\n    let result = '[';\n    let current = head;\n    while (current !== null) {\n        result += current.val;\n        if (current.next !== null) result += ', ';\n        current = current.next;\n    }\n    result += ']';\n    console.log(result);\n}\n\n// Main code\nconst arr = [1,2];\nconst head = createLinkedList(arr);\nconst sol = new Solution();\nconst reversedHead = sol.reverseList(head);\nprintLinkedList(reversedHead);\n",
+            "pythonProgram": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\nclass Solution:\n    def reverseList(self, head: ListNode) -> ListNode:\n        prev = None\n        curr = head\n        while curr:\n            next_temp = curr.next\n            curr.next = prev\n            prev = curr\n            curr = next_temp\n        return prev\n\ndef create_linked_list(arr):\n    if not arr:\n        return None\n    head = ListNode(arr[0])\n    current = head\n    for value in arr[1:]:\n        current.next = ListNode(value)\n        current = current.next\n    return head\n\ndef print_linked_list(head):\n    result = '['\n    current = head\n    while current:\n        result += str(current.val)\n        if current.next:\n            result += ', '\n        current = current.next\n    result += ']'\n    print(result)\n\n# Main code\narr = [1,2]\nhead = create_linked_list(arr)\nsol = Solution()\nreversed_head = sol.reverseList(head)\nprint_linked_list(reversed_head)\n",
+            "cProgram": "#include <stdio.h>\n#include <stdlib.h>\n\n// Definition for singly-linked list.\n struct ListNode* reverseList(struct ListNode* head);\nstruct ListNode {\n    int val;\n    struct ListNode *next;\n};\n\n// Function to create a linked list from an array\nstruct ListNode* createLinkedList(int* arr, int size) {\n    if (size == 0) return NULL;\n    struct ListNode* head = (struct ListNode*)malloc(sizeof(struct ListNode));\n    head->val = arr[0];\n    head->next = NULL;\n    struct ListNode* current = head;\n    for (int i = 1; i < size; i++) {\n        current->next = (struct ListNode*)malloc(sizeof(struct ListNode));\n        current = current->next;\n        current->val = arr[i];\n        current->next = NULL;\n    }\n    return head;\n}\n\n// Function to print a linked list\nvoid printLinkedList(struct ListNode* head) {\n    printf(\"[\");\n    struct ListNode* current = head;\n    while (current != NULL) {\n        printf(\"%d\", current->val);\n        if (current->next != NULL) printf(\", \");\n        current = current->next;\n    }\n    printf(\"]\\n\");\n}\n\nint main() {\n    int arr[] = {1,2};\n    int size = sizeof(arr) / sizeof(arr[0]);\n    struct ListNode* head = createLinkedList(arr, size);\n    struct ListNode* reversedHead = reverseList(head);\n    printLinkedList(reversedHead);\n    return 0;\n}\n",
+            "cppProgram": "#include <iostream>\n\nstruct ListNode {\n    int val;\n    ListNode *next;\n    ListNode() : val(0), next(nullptr) {}\n    ListNode(int x) : val(x), next(nullptr) {}\n    ListNode(int x, ListNode *next) : val(x), next(next) {}\n};\n\nclass Solution {\npublic:\n    ListNode* reverseList(ListNode* head) {\n        ListNode *prev = nullptr, *curr = head, *next = nullptr;\n        while (curr != nullptr) {\n            next = curr->next;\n            curr->next = prev;\n            prev = curr;\n            curr = next;\n        }\n        return prev;\n    }\n};\n\nListNode* createLinkedList(int arr[], int n) {\n    if (n == 0) return nullptr;\n    ListNode* head = new ListNode(arr[0]);\n    ListNode* current = head;\n    for (int i = 1; i < n; i++) {\n        current->next = new ListNode(arr[i]);\n        current = current->next;\n    }\n    return head;\n}\n\nvoid printLinkedList(ListNode* head) {\n    std::cout << \"[\";\n    ListNode* current = head;\n    while (current != nullptr) {\n        std::cout << current->val;\n        if (current->next != nullptr) std::cout << \", \";\n        current = current->next;\n    }\n    std::cout << \"]\" << std::endl;\n}\n\nint main() {\n    int arr[] = {1, 2};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    ListNode* head = createLinkedList(arr, n);\n    Solution sol;\n    ListNode* reversedHead = sol.reverseList(head);\n    printLinkedList(reversedHead);\n    return 0;\n}\n"
+        },
+        {
+            "name": "Testcase 3",
+            "input": "head = []",
+            "expectedOutput": "[]",
+            "isPermanent": true,
+            "status": null,
+            "program": "import java.util.*;\n\n// Definition for singly-linked list.\nclass ListNode {\n    int val;\n    ListNode next;\n    ListNode() {}\n    ListNode(int val) { this.val = val; }\n    ListNode(int val, ListNode next) { this.val = val; this.next = next; }\n\n    // Main method to run the program\n    public static void main(String[] args) {\n        // Step 1: Create a linked list with the given input\n        int[] arr = {};\n        ListNode head = createLinkedList(arr);\n\n        // Step 2: Call the reverseList method from the Solution class\n        Solution sol = new Solution();\n        ListNode reversedHead = sol.reverseList(head);\n\n        // Step 3: Print the reversed linked list\n        printLinkedList(reversedHead);\n    }\n\n    // Method to create a linked list from an array\n    public static ListNode createLinkedList(int[] arr) {\n        if (arr.length == 0) return null;\n        ListNode head = new ListNode(arr[0]);\n        ListNode current = head;\n        for (int i = 1; i < arr.length; i++) {\n            current.next = new ListNode(arr[i]);\n            current = current.next;\n        }\n        return head;\n    }\n\n    // Method to print a linked list\n    public static void printLinkedList(ListNode head) {\n        System.out.print(\"[\");\n        ListNode current = head;\n        while (current != null) {\n            System.out.print(current.val);\n            if (current.next != null) System.out.print(\", \");\n            current = current.next;\n        }\n        System.out.println(\"]\");\n    }\n}",
+            "javascriptProgram": "class ListNode {\n    constructor(val = 0, next = null) {\n        this.val = val;\n        this.next = next;\n    }\n}\n\nclass Solution {\n    reverseList(head) {\n        let prev = null;\n        let current = head;\n        while (current !== null) {\n            let nextTemp = current.next;\n            current.next = prev;\n            prev = current;\n            current = nextTemp;\n        }\n        return prev;\n    }\n}\n\nfunction createLinkedList(arr) {\n    if (arr.length === 0) return null;\n    let head = new ListNode(arr[0]);\n    let current = head;\n    for (let i = 1; i < arr.length; i++) {\n        current.next = new ListNode(arr[i]);\n        current = current.next;\n    }\n    return head;\n}\n\nfunction printLinkedList(head) {\n    let result = '[';\n    let current = head;\n    while (current !== null) {\n        result += current.val;\n        if (current.next !== null) result += ', ';\n        current = current.next;\n    }\n    result += ']';\n    console.log(result);\n}\n\n// Main code\nconst arr = [];\nconst head = createLinkedList(arr);\nconst sol = new Solution();\nconst reversedHead = sol.reverseList(head);\nprintLinkedList(reversedHead);\n",
+            "pythonProgram": "class ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\nclass Solution:\n    def reverseList(self, head: ListNode) -> ListNode:\n        prev = None\n        curr = head\n        while curr:\n            next_temp = curr.next\n            curr.next = prev\n            prev = curr\n            curr = next_temp\n        return prev\n\ndef create_linked_list(arr):\n    if not arr:\n        return None\n    head = ListNode(arr[0])\n    current = head\n    for value in arr[1:]:\n        current.next = ListNode(value)\n        current = current.next\n    return head\n\ndef print_linked_list(head):\n    result = '['\n    current = head\n    while current:\n        result += str(current.val)\n        if current.next:\n            result += ', '\n        current = current.next\n    result += ']'\n    print(result)\n\n# Main code\narr = []\nhead = create_linked_list(arr)\nsol = Solution()\nreversed_head = sol.reverseList(head)\nprint_linked_list(reversed_head)\n",
+            "cProgram": "#include <stdio.h>\n#include <stdlib.h>\n\n// Definition for singly-linked list.\n struct ListNode* reverseList(struct ListNode* head);\nstruct ListNode {\n    int val;\n    struct ListNode *next;\n};\n\n// Function to create a linked list from an array\nstruct ListNode* createLinkedList(int* arr, int size) {\n    if (size == 0) return NULL;\n    struct ListNode* head = (struct ListNode*)malloc(sizeof(struct ListNode));\n    head->val = arr[0];\n    head->next = NULL;\n    struct ListNode* current = head;\n    for (int i = 1; i < size; i++) {\n        current->next = (struct ListNode*)malloc(sizeof(struct ListNode));\n        current = current->next;\n        current->val = arr[i];\n        current->next = NULL;\n    }\n    return head;\n}\n\n// Function to print a linked list\nvoid printLinkedList(struct ListNode* head) {\n    printf(\"[\");\n    struct ListNode* current = head;\n    while (current != NULL) {\n        printf(\"%d\", current->val);\n        if (current->next != NULL) printf(\", \");\n        current = current->next;\n    }\n    printf(\"]\\n\");\n}\n\nint main() {\n    int arr[] = {};\n    int size = sizeof(arr) / sizeof(arr[0]);\n    struct ListNode* head = createLinkedList(arr, size);\n    struct ListNode* reversedHead = reverseList(head);\n    printLinkedList(reversedHead);\n    return 0;\n}\n",
+            "cppProgram": "#include <iostream>\n\nstruct ListNode {\n    int val;\n    ListNode *next;\n    ListNode() : val(0), next(nullptr) {}\n    ListNode(int x) : val(x), next(nullptr) {}\n    ListNode(int x, ListNode *next) : val(x), next(next) {}\n};\n\nclass Solution {\npublic:\n    ListNode* reverseList(ListNode* head) {\n        ListNode *prev = nullptr, *curr = head, *next = nullptr;\n        while (curr != nullptr) {\n            next = curr->next;\n            curr->next = prev;\n            prev = curr;\n            curr = next;\n        }\n        return prev;\n    }\n};\n\nListNode* createLinkedList(int arr[], int n) {\n    if (n == 0) return nullptr;\n    ListNode* head = new ListNode(arr[0]);\n    ListNode* current = head;\n    for (int i = 1; i < n; i++) {\n        current->next = new ListNode(arr[i]);\n        current = current->next;\n    }\n    return head;\n}\n\nvoid printLinkedList(ListNode* head) {\n    std::cout << \"[\";\n    ListNode* current = head;\n    while (current != nullptr) {\n        std::cout << current->val;\n        if (current->next != nullptr) std::cout << \", \";\n        current = current->next;\n    }\n    std::cout << \"]\" << std::endl;\n}\n\nint main() {\n    int arr[] = {};\n    int n = sizeof(arr)/sizeof(arr[0]);\n    ListNode* head = createLinkedList(arr, n);\n    Solution sol;\n    ListNode* reversedHead = sol.reverseList(head);\n    printLinkedList(reversedHead);\n    return 0;\n}\n"
+        }
+    ]
+}
+]

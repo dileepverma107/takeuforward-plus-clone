@@ -1,0 +1,40 @@
+[
+    { "title": "Check if Array Is Sorted and Rotated", "titleSlug": "check-if-array-is-sorted-and-rotated", "difficulty": "Easy", "category": "Arrays", "solved":"false", "points":0},
+    { "title": "Remove Duplicates from Sorted Array", "titleSlug": "remove-duplicates-from-sorted-array", "difficulty": "Easy", "category": "Arrays", "solved":"false", "points":0 },
+    { "title": "Left rotate an array by D places", "titleSlug": "rotate-array", "difficulty": "Easy", "category": "Arrays", "solved":"false" , "points":0},
+    { "title": "Move Zeroes", "titleSlug": "move-zeroes", "difficulty": "Easy", "category": "Arrays", "solved":"false" , "points":0},
+    { "title": "Find missing number in an array", "titleSlug": "missing-number", "difficulty": "Easy", "category": "Arrays", "solved":"false" , "points":0},
+    { "title": "Maximum Consecutive Ones", "titleSlug": "max-consecutive-ones", "difficulty": "Easy", "category": "Arrays", "solved":"false" , "points":0},
+    { "title": "Find the number that appears once, and other numbers twice", "titleSlug": "single-number", "difficulty": "Medium", "category": "Arrays", "solved":"false" , "points":0},
+    { "title": "Two Sum", "titleSlug": "two-sum", "difficulty": "Medium", "category": "Arrays","solved":"false", "points":0 },
+    { "title": "Sort an array of 0's 1's and 2's", "titleSlug": "sort-colors", "difficulty": "Medium", "category": "Arrays","solved":"false", "points":0 },
+    { "title": "Majority Element (>n/2 times)", "titleSlug": "majority-element", "difficulty": "Medium", "category": "Arrays","solved":"false", "points":0 },
+    { "title": "Kadane's Algorithm, maximum subarray sum", "titleSlug": "maximum-subarray", "difficulty": "Medium", "category": "Arrays","solved":"false", "points":0 },
+    { "title": "Stock Buy and Sell", "titleSlug": "best-time-to-buy-and-sell-stock", "difficulty": "Medium", "category": "Arrays","solved":"false", "points":0 },
+    { "title": "Sort Colors", "titleSlug": "sort-colors", "difficulty": "Medium", "category": "Arrays", "solved":"false", "points":0 },
+    { "title": "Pascal's Triangle", "titleSlug": "pascals-triangle", "difficulty": "Hard", "category": "Arrays", "solved":"false" , "points":0 },
+    { "title": "Majority Element (n/3 times)", "titleSlug": "majority-element-ii", "difficulty": "Hard", "category": "Arrays", "solved":"false", "points":0 },
+    { "title": "3 Sum Problem", "titleSlug": "3sum", "difficulty": "Hard", "category": "Arrays","solved":"false" , "points":0 },
+    { "title": "4-Sum Problem", "titleSlug": "4sum", "difficulty": "Hard", "category": "Arrays","solved":"false" , "points":0 },
+
+    { "title": "Binary Search", "titleSlug": "binary-search", "difficulty": "Easy", "category": "Binary Search","solved":"false" , "points":0 },
+    { "title": "Search in Rotated Sorted Array I", "titleSlug": "search-in-rotated-sorted-array", "difficulty": "Medium", "category": "Binary Search","solved":"false" , "points":0 },
+    { "title": "Koko Eating Bananas", "titleSlug": "koko-eating-bananas", "difficulty": "Hard", "category": "Binary Search","solved":"false", "points":0  },
+
+    { "title": "Remove outermost Paranthesis", "titleSlug": "remove-outermost-parentheses", "difficulty": "Easy", "category": "Strings","solved":"false" , "points":0 },
+    { "title": "Check whether one string is a rotation of another", "titleSlug": "rotate-string", "difficulty": "Medium", "category": "Strings","solved":"false", "points":0  },
+    { "title": "Longest Palindromic Substring[Do it without DP]", "titleSlug": "longest-palindromic-substring", "difficulty": "Hard", "category": "Strings","solved":"false", "points":0  },
+
+    { "title": "Reverse a LinkedList [Iterative]", "titleSlug": "reverse-linked-list", "difficulty": "Easy", "category": "LinkedList","solved":"false", "points":0  },
+    { "title": "Detect a loop in LL", "titleSlug": "linked-list-cycle", "difficulty": "Medium", "category": "LinkedList","solved":"false", "points":0  },
+    { "title": "Reverse LL in group of given size K", "titleSlug": "reverse-nodes-in-k-group", "difficulty": "Hard", "category": "LinkedList","solved":"false" , "points":0 },
+
+    { "title": "Count Good numbers", "titleSlug": "count-good-numbers", "difficulty": "Easy", "category": "Recursion","solved":"false", "points":0  },
+    { "title": "Pow(x, n)", "titleSlug": "powx-n", "difficulty": "Medium", "category": "Recursion","solved":"false" , "points":0 },
+    { "title": "N Queen Problem", "titleSlug": "n-queens", "difficulty": "Hard", "category": "Recursion","solved":"false" , "points":0 },
+
+    { "title": "Next Greater Element", "titleSlug": "next-greater-element-i", "difficulty": "Easy", "category": "Stack and Queues","solved":"false", "points":0  },
+    { "title": "Remove k Digits", "titleSlug": "remove-k-digits", "difficulty": "Medium", "category": "Stack and Queues","solved":"false", "points":0  },
+    { "title": "Trapping Rainwater", "titleSlug": "trapping-rain-water", "difficulty": "Hard", "category": "Stack and Queues","solved":"false" , "points":0 }
+  ]
+  
