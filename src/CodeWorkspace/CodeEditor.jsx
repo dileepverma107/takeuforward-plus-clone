@@ -110,7 +110,7 @@ const CodeEditor = ({ questionData, titleSlug, onSubmissionResult, isDarkMode })
         fullCode = testCase?.cppProgram.replace('cppCode', code) ;
       }
       console.log(fullCode);
-      const response = await axios.post('http://localhost:5000/piston/execute', {
+      const response = await axios.post('https://takeuforward-plus-clone.onrender.com/piston/execute', {
         language: language,
         code: fullCode,
         stdin: testCase.input
