@@ -7,13 +7,13 @@ import { getStorage } from "firebase/storage"; // Add this line
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD8uukafmG8R86J8J56_Iqwa9NfD4Qs2U8",
-  authDomain: "takeuforward-clone.firebaseapp.com",
-  projectId: "takeuforward-clone",
-  storageBucket: "takeuforward-clone.appspot.com",
-  messagingSenderId: "730411026956",
-  appId: "1:730411026956:web:234e4f386e4f3da9477c29",
-  measurementId: "G-HYJWF1TKK3"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
