@@ -26,7 +26,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ person, onClose }) => {
     Dileep: {
       name: "Dileep Verma",
       username: "dileepverma107",
-      rank: "SDE-3 @Adobe | Sr. Software Eng. @PwC",
+      rank: "CS-I @Adobe(temp) | Sr. Software Eng. @PwC",
       profilePic: dileepProfile,
       linkedin: "https://www.linkedin.com/in/dileep-verma-35a319139/",
       twitter: "https://x.com/nextgensolver",

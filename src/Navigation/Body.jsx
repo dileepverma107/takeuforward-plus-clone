@@ -24,9 +24,9 @@ const Body = ({ activeComponent }) => {
       case 'Discussion':
         return <DiscussionForum isDarkMode={isDarkMode}/>;
       case 'Roadmap':
-        return <WorkInProgress/>;
+        return <Typography variant="h4" style={{textAlign:'center', marginTop:'250px'}}>Build in progress</Typography>;
       case 'Session':
-        return <WorkInProgress/>;
+        return <Typography variant="h4" style={{textAlign:'center', marginTop:'250px'}}>Build in progress</Typography>;
       default:
         return <Typography variant="h4">Select a component from the sidebar</Typography>;
     }

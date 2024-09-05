@@ -4,6 +4,10 @@ const cors = require('cors');
 const app = express();
 const port = 5000;
 
+const token = process.env.REACT_APP_GITHUB_TOKEN;
+const GITHUB_USERNAME = 'dileepverma107';
+const GITHUB_REPO = 'takeuforward-plus-clone';
+
 // Use CORS middleware to handle CORS issues
 app.use(cors({
   origin: 'https://takeuforward-plus-clone.vercel.app', // Allow requests from this origin
@@ -180,6 +184,24 @@ app.post('/api/posts/comments/:commentId/reply', async (req, res) => {
     } catch (error) {
       console.error('Error:', error.response ? error.response.data : error.message);
       res.status(500).json({ error: 'An error occurred while processing your request.' });
+    }
+  });
+
+  app.post('/api/star-repo', async (req, res) => {
+    try {
+      const response = await axios.put(
+        `https://api.github.com/user/starred/${GITHUB_USERNAME}/${GITHUB_REPO}`,
+        {},
+        {
+          headers: {
+            Authorization: `token ${GITHUB_TOKEN}`,
+            Accept: 'application/vnd.github.v3+json',
+          },
+        }
+      );
+      res.status(200).send({ message: 'Starred successfully!' });
+    } catch (error) {
+      res.status(500).send({ message: 'Failed to star the repository.' });
     }
   });
 

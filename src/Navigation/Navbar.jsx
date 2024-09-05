@@ -173,7 +173,11 @@ const Navbar = ({ open }) => {
         }}
       >
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          {!open && <Logo>takeUAhead</Logo>}
+          {!open &&  <img 
+              src="/logo.png" 
+              alt="TUF+" 
+              style={{height:'65px', width:'510x', padding:'4px'}} // Adjust the size according to your needs
+            />}
 
           <Box sx={{ flexGrow: 1, mx: 2, display: 'flex', justifyContent: 'center' }}>
             {open ? (

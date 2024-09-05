@@ -57,7 +57,8 @@ const Logo = styled('div')(({ theme }) => ({
   padding: theme.spacing(2),
   textAlign: 'center',
   fontWeight: 'bold',
-  fontSize: '2rem',
+  fontSize: '2.2rem',
+  
   color: theme.palette.primary.main,
 }));
 

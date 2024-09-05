@@ -94,7 +94,13 @@ export function BoxRevealDemo() {
       </BoxReveal>
 
       <BoxReveal boxColor={"#FF6B6B"} duration={0.8}>
-        <Button className="mt-[1.6rem] bg-[#5046e6]">Explore</Button>
+        <Button className="mt-[1.6rem] bg-[#5046e6]">Explore TUF+ By  <span 
+              className="text-[#5046e6]" 
+              onMouseEnter={(e) => handleMouseEnter(e, 'Raj')}
+              style={{color: '#5046E6', cursor: 'pointer', textDecoration: 'none', marginLeft:'5px'}}
+            >
+              Raj Vikramaditya
+            </span> </Button>
       </BoxReveal>
     </div>
   );

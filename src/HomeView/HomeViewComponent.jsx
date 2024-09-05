@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   AppBar,
@@ -38,22 +38,29 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import GroupIcon from '@mui/icons-material/Group';
 import PersonIcon from '@mui/icons-material/Person';
 import EqualizerIcon from '@mui/icons-material/Equalizer';
+import StarIcon from '@mui/icons-material/Star';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
 import AuthModal from '../AuthComponents/AuthModel';
 import { BoxRevealDemo } from '../TsComponents/BoxRevealDemo';
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import apiClient from '../apiClient';
 
-const profileImage = '/me2.png';
+const profileImage = '/me2.jpg';
 
 const features = [
   { icon: <CodeIcon />, text: 'Practice Portal - Run & Submit Code' },
   { icon: <LanguageIcon />, text: 'Multi-Language Support - Java, C, C++, JavaScript, Python' },
-  { icon: <QuestionAnswerIcon />, text: 'AI-Assisted Doubt Portal - Get instant help with our trained model' },
+  { icon: <QuestionAnswerIcon />, text: 'AI-Assisted Doubt Portal' },
   { icon: <RateReviewIcon />, text: 'Code Review - Improve your code to industry standards' },
   { icon: <SpeedIcon />, text: 'Complexity Analysis - Evaluate time and space efficiency' },
   { icon: <EditIcon />, text: 'Rich Text Editor - Save notes in your preferred style' },
   { icon: <TrendingUpIcon />, text: 'Progress Tracking - Monitor your advancement' },
   { icon: <EmojiEventsIcon />, text: 'Leaderboard - Compete with others or opt-out (coming soon)' },
-  { icon: <GroupIcon />, text: 'Showcase your achievement - Exclusive Community discussions and Forum' },
-  { icon: <PersonIcon />, text: 'Profile - Update delete' },
+  { icon: <GroupIcon />, text: 'Exclusive Community discussions and Forum' },
+  { icon: <PersonIcon />, text: 'Profile DashBoard' },
   { icon: <EqualizerIcon />, text: 'LeetCode statistics in detail' },
 ];
 
@@ -134,6 +141,8 @@ const GlobalStyles = styled('style')({
 export default function HomeViewComponent() {
   const [openModal, setOpenModal] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
+  const [isStarred, setIsStarred] = useState(false);
+  const [isStarring, setIsStarring] = useState(false);
   const navigate = useNavigate();
 
   const handleOpenModal = () => setOpenModal(true);
@@ -147,6 +156,58 @@ export default function HomeViewComponent() {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+
+  useEffect(() => {
+    // Check if the repo is already starred when the component mounts
+    const starredStatus = localStorage.getItem('repoStarred');
+    if (starredStatus === 'true') {
+      setIsStarred(true);
+    }
+  }, []);
+
+  const handleStarRepo = useCallback(async () => {
+    if (isStarred || isStarring) return; // Prevent starring if already starred or in progress
+
+    setIsStarring(true);
+    setIsStarred(true);
+
+    try {
+      const response = await apiClient.post('https://takeuforward-plus-clone.onrender.com/api/star-repo');
+      if (response.status === 200) {
+        setIsStarred(true);
+        localStorage.setItem('repoStarred', 'true'); // Persist the starred status
+        toast.success("Thank you for rating my work!", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+		   onClose: () => {
+            setIsStarred(false);
+           
+          }
+        });
+      }
+    } catch (error) {
+      setIsStarred(false); // Revert UI if API call fails
+      localStorage.removeItem('repoStarred'); 
+      toast.error("Failed to star the repository. Please try again.", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+      
+    }
+    finally {
+      setIsStarring(false);
+    }
+  }, [isStarred, isStarring]);
+
+  
 
   const theme = createTheme({
     palette: {
@@ -211,37 +272,41 @@ export default function HomeViewComponent() {
           borderBottom: `1px solid ${theme.palette.divider}`,
         }}>
           <Toolbar>
-            <Button color="inherit" sx={{ textTransform: 'none', position: 'relative', fontSize: '2rem' }}>
-              <span style={{ color: theme.palette.secondary.main, fontWeight: '900' }}>TUF+</span>
-              <span
-                style={{
-                  position: 'absolute',
-                  fontSize: '0.875rem',
-                  color: theme.palette.text.secondary,
-                  top: '0',
-                  right: '-5px',
-                }}
-              >
-                clone
-              </span>
-            </Button>
+            <img 
+              src="/logo.png" 
+              alt="TUF+" 
+              style={{height:'65px', width:'510x', padding:'4px'}} // Adjust the size according to your needs
+            />
             <Box sx={{ flexGrow: 1 }} />
-            <IconButton color="inherit" href="https://github.com" target="_blank">
+            <IconButton color="inherit" href="https://github.com/dileepverma107" target="_blank">
               <GitHubIcon />
             </IconButton>
-            <IconButton color="inherit" href="https://linkedin.com" target="_blank">
+            <IconButton color="inherit" href="https://www.linkedin.com/in/dileep-verma-35a319139/" target="_blank">
               <LinkedInIcon />
             </IconButton>
-            <IconButton color="inherit" href="https://twitter.com" target="_blank">
+            <IconButton color="inherit" href="https://x.com/nextgensolver" target="_blank">
               <TwitterIcon />
             </IconButton>
-            <IconButton color="inherit" href="https://instagram.com" target="_blank">
+            <IconButton color="inherit" href="https://www.instagram.com/dileepverma107/" target="_blank">
               <InstagramIcon />
             </IconButton>
             <IconButton onClick={toggleDarkMode} color="inherit">
               {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
             </IconButton>
-            <Button color="inherit" variant="outlined" sx={{ mx: 1 }}>Donate</Button>
+            <Tooltip id="star-tooltip" />
+          <IconButton
+            color="inherit"
+            onClick={handleStarRepo}
+            data-tooltip-id="star-tooltip"
+            data-tooltip-content={isStarred ? "You've starred this repo" : "Star this repo on GitHub"}
+            disabled={isStarred || isStarring}
+          >
+            {isStarred ? (
+              <StarIcon sx={{ color: '#FFD700' }} />
+            ) : (
+              <StarBorderIcon />
+            )}
+          </IconButton>
             <IconButton onClick={handleOpenModal} sx={{ mr: 2 }}>
               <LoginIcon />
             </IconButton>
@@ -253,26 +318,6 @@ export default function HomeViewComponent() {
             <Grid container spacing={4} alignItems="center">
               <Grid item xs={12} md={9}>
                 <BoxRevealDemo />
-                <Box sx={{ mt: 4 }}>
-                  <GlowingButton variant="contained" size="large" onClick={handleOpenModal}>
-                    Get Started
-                  </GlowingButton>
-                  <Button 
-                    variant="outlined" 
-                    size="large" 
-                    sx={{ 
-                      height: 48,
-                      borderColor: theme.palette.primary.main,
-                      color: theme.palette.primary.main,
-                      '&:hover': {
-                        backgroundColor: theme.palette.primary.main,
-                        color: theme.palette.background.default,
-                      },
-                    }}
-                  >
-                    Learn More
-                  </Button>
-                </Box>
               </Grid>
             </Grid>
           </HeroContent>
@@ -334,18 +379,18 @@ export default function HomeViewComponent() {
               {' TUF+ Clone. All rights reserved.'}
             </Typography>
             <Box mt={2} display="flex" justifyContent="center">
-              <IconButton color="inherit" href="https://github.com" target="_blank">
-                <GitHubIcon />
-              </IconButton>
-              <IconButton color="inherit" href="https://linkedin.com" target="_blank">
-                <LinkedInIcon />
-              </IconButton>
-              <IconButton color="inherit" href="https://twitter.com" target="_blank">
-                <TwitterIcon />
-              </IconButton>
-              <IconButton color="inherit" href="https://instagram.com" target="_blank">
-                <InstagramIcon />
-              </IconButton>
+            <IconButton color="inherit" href="https://github.com/dileepverma107" target="_blank">
+              <GitHubIcon />
+            </IconButton>
+            <IconButton color="inherit" href="https://www.linkedin.com/in/dileep-verma-35a319139/" target="_blank">
+              <LinkedInIcon />
+            </IconButton>
+            <IconButton color="inherit" href="https://x.com/nextgensolver" target="_blank">
+              <TwitterIcon />
+            </IconButton>
+            <IconButton color="inherit" href="https://www.instagram.com/dileepverma107/" target="_blank">
+              <InstagramIcon />
+            </IconButton>
             </Box>
           </Container>
         </Box>
@@ -355,7 +400,7 @@ export default function HomeViewComponent() {
           onLogin={handleLogin}
         />
       </Box>
+      <ToastContainer />
     </ThemeProvider>
- 
   );
 }
