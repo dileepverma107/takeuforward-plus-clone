@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 const port = 5000;
 
-const token = process.env.GITHUB_TOKEN;
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_USERNAME = 'dileepverma107';
 const GITHUB_REPO = 'takeuforward-plus-clone';
 
