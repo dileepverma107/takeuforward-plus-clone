@@ -17,6 +17,10 @@ import {
   createTheme,
   CssBaseline,
   Paper,
+  useMediaQuery,
+  Drawer,
+  Menu,
+  MenuItem,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import FeaturesIcon from '@mui/icons-material/Stars';
@@ -40,6 +44,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import EqualizerIcon from '@mui/icons-material/Equalizer';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import MenuIcon from '@mui/icons-material/Menu';
 import AuthModal from '../AuthComponents/AuthModel';
 import { BoxRevealDemo } from '../TsComponents/BoxRevealDemo';
 import { Tooltip } from 'react-tooltip';
@@ -74,6 +79,9 @@ const HeroSection = styled(Box)(({ theme }) => ({
   boxShadow: theme.palette.mode === 'dark'
     ? '0 5px 15px rgba(255, 255, 255, 0.1)'
     : '0 5px 15px rgba(0, 0, 0, 0.1)',
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(10, 0),
+  },
 }));
 
 const HeroContent = styled(Container)(({ theme }) => ({
@@ -94,6 +102,9 @@ const HeroImage = styled('img')(({ theme }) => ({
   '&:hover': {
     transform: 'rotate(5deg) scale(1.05)',
     opacity: 1,
+  },
+  [theme.breakpoints.down('md')]: {
+    display: 'none',
   },
 }));
 
@@ -143,7 +154,10 @@ export default function HomeViewComponent() {
   const [darkMode, setDarkMode] = useState(true);
   const [isStarred, setIsStarred] = useState(false);
   const [isStarring, setIsStarring] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
 
   const handleOpenModal = () => setOpenModal(true);
   const handleCloseModal = () => setOpenModal(false);
@@ -157,8 +171,15 @@ export default function HomeViewComponent() {
     setDarkMode(!darkMode);
   };
 
+  const handleMobileMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMobileMenuClose = () => {
+    setAnchorEl(null);
+  };
+
   useEffect(() => {
-    // Check if the repo is already starred when the component mounts
     const starredStatus = localStorage.getItem('repoStarred');
     if (starredStatus === 'true') {
       setIsStarred(true);
@@ -166,7 +187,7 @@ export default function HomeViewComponent() {
   }, []);
 
   const handleStarRepo = useCallback(async () => {
-    if (isStarred || isStarring) return; // Prevent starring if already starred or in progress
+    if (isStarred || isStarring) return;
 
     setIsStarring(true);
     setIsStarred(true);
@@ -175,7 +196,7 @@ export default function HomeViewComponent() {
       const response = await apiClient.post('https://takeuforward-plus-clone.onrender.com/api/star-repo');
       if (response.status === 200) {
         setIsStarred(true);
-        localStorage.setItem('repoStarred', 'true'); // Persist the starred status
+        localStorage.setItem('repoStarred', 'true');
         toast.success("Thank you for rating my work!", {
           position: "top-right",
           autoClose: 3000,
@@ -183,14 +204,13 @@ export default function HomeViewComponent() {
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
-		   onClose: () => {
+          onClose: () => {
             setIsStarred(false);
-           
           }
         });
       }
     } catch (error) {
-      setIsStarred(false); // Revert UI if API call fails
+      setIsStarred(false);
       localStorage.removeItem('repoStarred'); 
       toast.error("Failed to star the repository. Please try again.", {
         position: "top-right",
@@ -200,14 +220,10 @@ export default function HomeViewComponent() {
         pauseOnHover: true,
         draggable: true,
       });
-      
-    }
-    finally {
+    } finally {
       setIsStarring(false);
     }
   }, [isStarred, isStarring]);
-
-  
 
   const theme = createTheme({
     palette: {
@@ -275,41 +291,85 @@ export default function HomeViewComponent() {
             <img 
               src="/logo.png" 
               alt="TUF+" 
-              style={{height:'65px', width:'510x', padding:'4px'}} // Adjust the size according to your needs
+              style={{height: isMobile ? '40px' : '65px', width: 'auto', padding: '4px'}}
             />
             <Box sx={{ flexGrow: 1 }} />
-            <IconButton color="inherit" href="https://github.com/dileepverma107" target="_blank">
-              <GitHubIcon />
-            </IconButton>
-            <IconButton color="inherit" href="https://www.linkedin.com/in/dileep-verma-35a319139/" target="_blank">
-              <LinkedInIcon />
-            </IconButton>
-            <IconButton color="inherit" href="https://x.com/nextgensolver" target="_blank">
-              <TwitterIcon />
-            </IconButton>
-            <IconButton color="inherit" href="https://www.instagram.com/dileepverma107/" target="_blank">
-              <InstagramIcon />
-            </IconButton>
-            <IconButton onClick={toggleDarkMode} color="inherit">
-              {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
-            </IconButton>
-            <Tooltip id="star-tooltip" />
-          <IconButton
-            color="inherit"
-            onClick={handleStarRepo}
-            data-tooltip-id="star-tooltip"
-            data-tooltip-content={isStarred ? "You've starred this repo" : "Star this repo on GitHub"}
-            disabled={isStarred || isStarring}
-          >
-            {isStarred ? (
-              <StarIcon sx={{ color: '#FFD700' }} />
+            {isMobile ? (
+              <>
+                <IconButton
+                  edge="start"
+                  color="inherit"
+                  aria-label="menu"
+                  onClick={handleMobileMenuOpen}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  onClose={handleMobileMenuClose}
+                >
+                  <MenuItem onClick={() => { window.open('https://github.com/dileepverma107', '_blank'); handleMobileMenuClose(); }}>
+                    <GitHubIcon sx={{ mr: 1 }} /> GitHub
+                  </MenuItem>
+                  <MenuItem onClick={() => { window.open('https://www.linkedin.com/in/dileep-verma-35a319139/', '_blank'); handleMobileMenuClose(); }}>
+                    <LinkedInIcon sx={{ mr: 1 }} /> LinkedIn
+                  </MenuItem>
+                  <MenuItem onClick={() => { window.open('https://x.com/nextgensolver', '_blank'); handleMobileMenuClose(); }}>
+                    <TwitterIcon sx={{ mr: 1 }} /> Twitter
+                  </MenuItem>
+                  <MenuItem onClick={() => { window.open('https://www.instagram.com/dileepverma107/', '_blank'); handleMobileMenuClose(); }}>
+                    <InstagramIcon sx={{ mr: 1 }} /> Instagram
+                  </MenuItem>
+                  <MenuItem onClick={() => { toggleDarkMode(); handleMobileMenuClose(); }}>
+                    {darkMode ? <LightModeIcon sx={{ mr: 1 }} /> : <DarkModeIcon sx={{ mr: 1 }} />} 
+                    {darkMode ? 'Light Mode' : 'Dark Mode'}
+                  </MenuItem>
+                  <MenuItem onClick={() => { handleStarRepo(); handleMobileMenuClose(); }} disabled={isStarred || isStarring}>
+                    {isStarred ? <StarIcon sx={{ mr: 1, color: '#FFD700' }} /> : <StarBorderIcon sx={{ mr: 1 }} />}
+                    Star Repository
+                  </MenuItem>
+                  <MenuItem onClick={() => { handleOpenModal(); handleMobileMenuClose(); }}>
+                    <LoginIcon sx={{ mr: 1 }} /> Login
+                  </MenuItem>
+                </Menu>
+              </>
             ) : (
-              <StarBorderIcon />
+              <>
+                <IconButton color="inherit" href="https://github.com/dileepverma107" target="_blank">
+                  <GitHubIcon />
+                </IconButton>
+                <IconButton color="inherit" href="https://www.linkedin.com/in/dileep-verma-35a319139/" target="_blank">
+                  <LinkedInIcon />
+                </IconButton>
+                <IconButton color="inherit" href="https://x.com/nextgensolver" target="_blank">
+                  <TwitterIcon />
+                </IconButton>
+                <IconButton color="inherit" href="https://www.instagram.com/dileepverma107/" target="_blank">
+                  <InstagramIcon />
+                </IconButton>
+                <IconButton onClick={toggleDarkMode} color="inherit">
+                  {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
+                </IconButton>
+                <Tooltip id="star-tooltip" />
+                <IconButton
+                  color="inherit"
+                  onClick={handleStarRepo}
+                  data-tooltip-id="star-tooltip"
+                  data-tooltip-content={isStarred ? "You've starred this repo" : "Star this repo on GitHub"}
+                  disabled={isStarred || isStarring}
+                >
+                  {isStarred ? (
+                    <StarIcon sx={{ color: '#FFD700' }} />
+                  ) : (
+                    <StarBorderIcon />
+                  )}
+                </IconButton>
+                <IconButton onClick={handleOpenModal} sx={{ mr: 2 }}>
+                  <LoginIcon />
+                </IconButton>
+              </>
             )}
-          </IconButton>
-            <IconButton onClick={handleOpenModal} sx={{ mr: 2 }}>
-              <LoginIcon />
-            </IconButton>
           </Toolbar>
         </AppBar>
         <Toolbar />
@@ -335,31 +395,20 @@ export default function HomeViewComponent() {
                   <FeaturesIcon sx={{ fontSize: 40, mb: 1, color: theme.palette.primary.main }} />
                   <Typography variant="h4" component="h2" align="center" sx={{
                     color: theme.palette.primary.main,
+                    fontSize: { xs: '1.5rem', sm: '2rem', md: '2.125rem' },
                   }}>
                     Features available in this clone
                   </Typography>
                 </Box>
                 <Grid container spacing={2}>
-                  <Grid item xs={12} md={6}>
-                    <List>
-                      {features.slice(0, Math.ceil(features.length / 2)).map((feature, index) => (
-                        <ListItem key={index}>
-                          <ListItemIcon sx={{ color: theme.palette.secondary.main }}>{feature.icon}</ListItemIcon>
-                          <ListItemText primary={feature.text} sx={{ color: theme.palette.text.primary }} />
-                        </ListItem>
-                      ))}
-                    </List>
-                  </Grid>
-                  <Grid item xs={12} md={6}>
-                    <List>
-                      {features.slice(Math.ceil(features.length / 2)).map((feature, index) => (
-                        <ListItem key={index + Math.ceil(features.length / 2)}>
-                          <ListItemIcon sx={{ color: theme.palette.secondary.main }}>{feature.icon}</ListItemIcon>
-                          <ListItemText primary={feature.text} sx={{ color: theme.palette.text.primary }} />
-                        </ListItem>
-                      ))}
-                    </List>
-                  </Grid>
+                  {features.map((feature, index) => (
+                    <Grid item xs={12} sm={6} md={4} key={index}>
+                      <ListItem>
+                        <ListItemIcon sx={{ color: theme.palette.secondary.main }}>{feature.icon}</ListItemIcon>
+                        <ListItemText primary={feature.text} sx={{ color: theme.palette.text.primary }} />
+                      </ListItem>
+                    </Grid>
+                  ))}
                 </Grid>
               </Paper>
             </Grid>
@@ -379,18 +428,18 @@ export default function HomeViewComponent() {
               {' TUF+ Clone. All rights reserved.'}
             </Typography>
             <Box mt={2} display="flex" justifyContent="center">
-            <IconButton color="inherit" href="https://github.com/dileepverma107" target="_blank">
-              <GitHubIcon />
-            </IconButton>
-            <IconButton color="inherit" href="https://www.linkedin.com/in/dileep-verma-35a319139/" target="_blank">
-              <LinkedInIcon />
-            </IconButton>
-            <IconButton color="inherit" href="https://x.com/nextgensolver" target="_blank">
-              <TwitterIcon />
-            </IconButton>
-            <IconButton color="inherit" href="https://www.instagram.com/dileepverma107/" target="_blank">
-              <InstagramIcon />
-            </IconButton>
+              <IconButton color="inherit" href="https://github.com/dileepverma107" target="_blank">
+                <GitHubIcon />
+              </IconButton>
+              <IconButton color="inherit" href="https://www.linkedin.com/in/dileep-verma-35a319139/" target="_blank">
+                <LinkedInIcon />
+              </IconButton>
+              <IconButton color="inherit" href="https://x.com/nextgensolver" target="_blank">
+                <TwitterIcon />
+              </IconButton>
+              <IconButton color="inherit" href="https://www.instagram.com/dileepverma107/" target="_blank">
+                <InstagramIcon />
+              </IconButton>
             </Box>
           </Container>
         </Box>
